@@ -1,0 +1,33 @@
+<div class="table-responsive">
+<div class="row">
+<div class="col-sm-4 col-sm-offset-8">
+	<div class="dataTables_filter" id="datatable-example_filter"><label>姓名查找: <input type="text" aria-controls="datatable-example" ng-model="searchedCategoryName" ng-change="searchCategoryName()"></label><!-- <button ng-click="searchName()" type="submit">搜索</button></div> -->
+</div>
+</div>
+
+<table class="user_info table table-bordered text-center course_info " id="tb_doc_m">
+	<thead>
+		<tr>
+		 	<th style="width:20%">编号</th>
+		 	<th style="width:20%">类别</th>
+		 	<th style="width:40%">描述</th>
+		 	<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="category in categorys">
+			<td>{{ category.id }}</td>
+			<td>{{ category.name }}</td>
+			<td>{{ category.introduction }}</td>
+			<td><button class="btn  btn-danger act_num" ng-click="deleteCategory(category)">删除</button></td>
+		</tr>
+	</tbody>
+ </table>
+<div class="row">
+	<div class="col-lg-3 col-lg-offset-9">
+		<a href="#addCategory"><button type="button" class="btn btn-success addUser">添加类别</button></a>
+		<button type="button" onclick="$('#tb_doc_m').tableExport({ type: 'excel', separator: ';', escape: 'false' });"  class="btn btn-warning">
+			导出Excel
+		</button>
+	</div>
+</div> 

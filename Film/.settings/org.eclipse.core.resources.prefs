@@ -1,0 +1,14 @@
+eclipse.preferences.version=1
+encoding//WebContent/pages/manager/pages=UTF-8
+encoding//WebContent/pages/manager/pages/addCategory.html=UTF-8
+encoding//WebContent/pages/manager/pages/addFilmDetail.html=UTF-8
+encoding//WebContent/pages/manager/pages/adminList.html=UTF-8
+encoding//WebContent/pages/manager/pages/categoryList.html=UTF-8
+encoding//WebContent/pages/manager/pages/commentList.html=UTF-8
+encoding//WebContent/pages/manager/pages/commentReply.html=UTF-8
+encoding//WebContent/pages/manager/pages/filmDetail.html=UTF-8
+encoding//WebContent/pages/manager/pages/filmList.html=UTF-8
+encoding//WebContent/pages/manager/pages/userDetail.html=UTF-8
+encoding//WebContent/pages/manager/pages/userList.html=UTF-8
+encoding//src/com/db/ConnDB.java=UTF-8
+encoding/<project>=UTF-8

@@ -1,0 +1,31 @@
+<div class="table-responsive">
+<div class="row">
+<div class="col-sm-4 col-sm-offset-8">
+	<div class="dataTables_filter" id="datatable-example_filter"><label>姓名查找: <input type="text" aria-controls="datatable-example" ng-model="searchedName" ng-change="searchName()"></label><!-- <button ng-click="searchName()" type="submit">搜索</button></div> -->
+</div>
+</div>
+
+<table class="user_info table table-bordered text-center course_info " id="tb_doc_m">
+	<thead>
+		<tr>
+		 	<th style="width:10%">评论编号</th>
+		 	<th style="width:10%">回复人编号</th>
+		 	<th style="width:20%">回复人姓名</th>
+		 	<th style="width:30%">回复内容</th>		 		
+		 	<th style="width:10%">回复时间</th>		 	
+		 	<th></th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr ng-repeat="reply in replys">
+			<td>{{ reply.id }}</td>
+			<td>{{ reply.userid }}</td>
+			<td>{{ reply.username }}</td>
+			<td>{{ reply.reply }}</td>
+			<td>{{ reply.time }}</td>
+			<td>
+	 			<button class="btn  btn-danger act_num" ng-click="deleteReply(reply)">删除</button></td>
+		</tr>
+	</tbody>
+ </table>
+</div> 

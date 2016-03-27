@@ -1,0 +1,79 @@
+<div class="middle-box box">
+	<h2 class="filmname">{{film.name}}<span></span></h2>
+	<div class="middle-left-box">
+		<div class="subject ">
+			<div class="mainPic">
+				<img ng-src="http://localhost:8080/Film/{{film.picture}}" title="{{film.name}}">
+			</div>
+			<div class="info">
+				<span class="p1">热度 ：<span class="p2">{{film.hot}}</span></span><br>
+				<span class="p1">导演 ： <span class="p2">{{film.director}}</span></span><br>
+				<span class="p1">编剧 ： <span class="p2">布尔.斯蒂尔斯</span></span><br>
+				<span class="p1">主演 ：<span class="p2">李易峰</span> </span><br>
+				<span class="p1">类型 ： </span>
+				<span class="p1" ng-repeat="class in classes"><span class="p2">{{class}}/</span></span><br>
+				<span class="p1">评论数： <span class="p2"><a href="#/filmCommentList/{{film.id}}">{{film.comment}}(全部评论)</a></span></span><br>
+				<span class="p1">得分： <span class="p2">{{film.gradecount}}</span></span><br>
+				<span class="p1">价钱： <span class="p2">{{film.price}}</span></span><br>
+				<span class="p1">时长： <span class="p2">{{film.time}}</span></span>
+			</div>	
+		</div>
+		<div class="gtleft">
+			<div class="gtleft">
+    			<ul class="ul_subject_menu bicelink color_gray pt6 clearfix">
+                	<li> 
+                    	<img src="../pics/short-comment.gif">&nbsp;
+        				<a onclick="moreurl(this, {from:'mv_sbj_wr_cmnt_login'})" class="j a_show_login"  rel="nofollow">写短评</a>
+ 					</li>
+                    <li> 
+   						 <img src="../pics/add-review.gif">&nbsp;
+        				 <a onclick="moreurl(this, {from:'mv_sbj_wr_rv_login'})" class="j a_show_login"  rel="nofollow">写影评</a>
+ 					</li>
+                    <li> 
+    					<img src="../pics/add-doulist.gif">&nbsp;
+    					<a href="/subject/3543318/questions/ask?from=subject_top">提问题</a>
+ 					</li>
+			</div>
+		</div>
+		<div class="related-info" style="margin-bottom:-10px;">
+    	    <h2 class="intro">{{film.name}}的剧情简介&nbsp;&nbsp;·&nbsp;&nbsp;·&nbsp;&nbsp;·&nbsp;&nbsp;·&nbsp;&nbsp;·&nbsp;&nbsp;·</h2>
+            <div class="indent" id="link-report">
+	            <span class="introduction">
+	                                　	{{film.introduction}}
+	            </span>              
+            </div>
+		</div>
+		<div id="comments-section">
+        	<div class="mod-hd">  
+        		<a class="comment_btn j a_show_login" href="" rel="nofollow"><span>我来说两句</span></a>
+    			<h2 class="intro"> <i class="">{{film.name}}的短评</i>· · · · · ·
+            		<span class="p1">(<a href="">全部{{film.comment}}条</a>) </span>
+				</h2>
+        	</div>
+        	<div class="mod-bd">          
+			    <div class="tab-hd">
+			        <!-- <a id="hot-comments-tab" href="comments" data-id="hot" class="on">热门</a>&nbsp;/&nbsp;
+			        <a id="new-comments-tab" href="comments?sort=time" data-id="new" class="on">最新</a>&nbsp; -->
+
+			    </div>
+   				<div class="tab-bd">
+       				<div id="hot-comments" class="tab">	
+	        			<div class="comment-item" data-cid="547671387" ng-repeat="filmComment in filmComments">  
+		    				<div class="comment">
+			        			<h3>
+			            			<span class="comment-info">
+			                			<span>{{filmComment.username}}</span>
+			                    		<span class="allstar30 rating" title="还行"></span>
+			                			<span class="">{{filmComment.time}}</span>
+			           				 </span>
+			       			    </h3>
+		        				<p class="commentContent"> {{filmComment.comment}} </p>
+		    				</div>
+	       				 </div>           
+                		&gt; <a href="" class="more">更多短评{{}}条</a>
+       			 	</div>
+    			</div>    
+        </div>
+    </div>
+	</div>
+</div>

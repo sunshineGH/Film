@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" id="WebApp_ID" version="2.5">
+  <display-name>Film</display-name>
+  <welcome-file-list>
+    <welcome-file>index.html</welcome-file>
+    <welcome-file>index.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
+    <welcome-file>default.html</welcome-file>
+    <welcome-file>default.htm</welcome-file>
+    <welcome-file>default.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>InfoCl</display-name>
+    <servlet-name>InfoCl</servlet-name>
+    <servlet-class>com.serlvet.InfoCl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InfoCl</servlet-name>
+    <url-pattern>/InfoCl</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UploadPic</display-name>
+    <servlet-name>UploadPic</servlet-name>
+    <servlet-class>com.serlvet.UploadPic</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UploadPic</servlet-name>
+    <url-pattern>/UploadPic</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <description></description>
+    <display-name>PayServlet</display-name>
+    <servlet-name>PayServlet</servlet-name>
+    <servlet-class>com.serlvet.PayServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PayServlet</servlet-name>
+    <url-pattern>/PayServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>BackServlet</display-name>
+    <servlet-name>BackServlet</servlet-name>
+    <servlet-class>com.serlvet.BackServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>BackServlet</servlet-name>
+    <url-pattern>/BackServlet</url-pattern>
+  </servlet-mapping>
+  
+</web-app>

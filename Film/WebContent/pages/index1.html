@@ -1,0 +1,2066 @@
+
+<!DOCTYPE html>
+<html lang="zh-cmn-Hans" class="ua-windows ua-webkit">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="renderer" content="webkit">
+    <meta name="referrer" content="unsafe-url">
+    <title>
+        爱豆电影
+</title>
+    
+    <meta name="baidu-site-verification" content="cZdR4xxR7RxmM4zE" />
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="Sun, 6 Mar 2005 01:00:00 GMT">
+    
+    <meta http-equiv="mobile-agent" content="format=xhtml; url=http://m.douban.com/movie/">
+    <meta property="qc:admins" content="13753521351564752166375" />
+    
+    
+    <meta name="keywords" content="电影、经典电影、热映、电视剧、美剧、影评、电影院、电影票、排行、推荐"/>
+    <meta name="description" content="豆瓣电影提供最新的电影介绍及评论包括上映影片的影讯查询及购票服务。你可以记录想看、在看和看过的电影电视剧，顺便打分、写影评。根据你的口味，豆瓣电影会推荐好电影给你。" />
+
+    <link rel="apple-touch-icon" href="/pics/movie/apple-touch-icon.png">
+    <link href="style/base/douban.css" rel="stylesheet" type="text/css">
+    <link href="style/base/_all.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript">var _head_start = new Date();</script>
+    <script type="text/javascript" src="style/jquery.js"></script>
+    <script type="text/javascript" src="style/douban.js"></script>
+    <script type="text/javascript" src="style/_all.js"></script>
+    <script src="../js/angular.js"></script>
+	<script src="../js/angular-route.js"></script>
+    
+    <link rel="stylesheet" href="style/base/home.css" />
+    <script type="text/javascript" src="style/do.js" data-cfg-autoload="false"    ></script>
+    <script>
+        Do.global('style/prettyfield.js');
+        Do.global('style/moreurl.js');
+    </script>
+
+    <style type="text/css"></style>
+    <script type="text/javascript"></script>
+    <link rel="stylesheet" href="style/base/432937b314661c26.css">
+
+    <link rel="shortcut icon" href="../images/favicon.ico" type="image/x-icon">
+</head>
+
+<body ng-app="filmApp">
+  
+    <script type="text/javascript">var _body_start = new Date();</script>
+
+    
+   
+
+
+
+
+
+
+
+<div id="db-global-nav" class="global-nav">
+  <div class="bd">
+    
+
+
+
+
+
+<div class="top-nav-info">
+      
+      <a href="https://www.douban.com/accounts/login?source=movie" class="nav-login" rel="nofollow">登录</a>
+      <a href="https://www.douban.com/accounts/register?source=movie" class="nav-register" rel="nofollow">注册</a>
+</div>
+
+
+    <div class="top-nav-doubanapp">
+        
+        <a href="https://www.douban.com/doubanapp/app?channel=top-nav" class="lnk-doubanapp">下载豆瓣客户端</a>
+        <div id="top-nav-appintro" class="more-items">
+            <p class="appintro-title">豆瓣</p>
+            <p class="slogan">和有趣的人做有趣的事</p>
+            <p class="qrcode">
+                扫码直接下载
+            </p>
+            <div class="download">
+                <a href="https://www.douban.com/doubanapp/redirect?channel=top-nav&amp;direct_dl=1&amp;download=iOS">iPhone</a>
+                <span>·</span>
+                <a href="https://www.douban.com/doubanapp/redirect?channel=top-nav&amp;direct_dl=1&amp;download=Android" class="download-android">Android</a>
+            </div>
+        </div>
+        <div id="doubanapp-tip">
+            <a href="https://www.douban.com/doubanapp/app?channel=qipao" class="tip-link">豆瓣 3.0 全新发布</a>
+            <a href="javascript: void 0;" class="tip-close">×</a>
+        </div>
+    </div>
+
+    <div class="global-nav-items">
+      <ul>
+          
+            
+            <li class="">
+            <a href="https://www.douban.com/" target="_blank" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-main&#34;,&#34;uid&#34;:&#34;0&#34;}">爱豆</a>
+            </li>          
+            
+            <li class="on">
+            <a href="https://movie.douban.com/" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-movie&#34;,&#34;uid&#34;:&#34;0&#34;}">电影</a>
+            </li>
+       
+              <a href="#more" class="bn-more"><span>更多</span></a>
+              <div class="more-items">
+                <table cellpadding="0" cellspacing="0">
+                    
+                    <tr><td><a href="https://moment.douban.com" target="_blank" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-moment&#34;,&#34;uid&#34;:&#34;0&#34;}">一刻</a></td></tr>
+                    
+                    <tr><td><a href="https://ypy.douban.com" target="_blank" data-moreurl-dict="{&#34;from&#34;:&#34;top-nav-click-ypy&#34;,&#34;uid&#34;:&#34;0&#34;}">一拍一</a></td></tr>
+                </table>
+              </div>
+            </li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+
+
+<div id="db-nav-movie" class="nav">
+  <div class="nav-wrap">
+  <div class="nav-primary">
+    <div class="nav-logo">
+      <a href="https://movie.douban.com">豆瓣电影</a>
+    </div>
+    <div class="nav-search">
+      <form action="https://movie.douban.com/subject_search" method="get">
+        <fieldset>
+          <legend>搜索：</legend>
+          <label for="inp-query">电影、影人、影院、电视剧</label>
+          <div class="inp"><input id="inp-query" name="search_text" size="22" maxlength="60" value=""></div>
+          <div class="inp-btn"><input type="submit" value="搜索"></div>
+          <input type="hidden" name="cat" value="1002" />
+        </fieldset>
+      </form>
+        <a href="https://movie.douban.com/doubanfilmawards_nominees_6th/?source=navigation" target="_blank" class="ban-filmawards">
+            <img src="../images/xinxiang_6th_nav.png" alt="豆瓣电影观影报告">
+        </a>
+        <style scoped>
+            .ban-filmawards,
+            .ban-filmawards:hover,
+            .ban-filmawards:link,
+            .ban-filmawards:visited {
+                position: absolute;
+                top: 8px;
+                right: 30px;
+                background: transparent !important;
+            }
+            .ban-filmawards img {
+                width: 186px;
+                height: 96px;
+                margin-top: -10px;
+            }
+            .nav-search {
+                overflow: visible;
+                margin-left: 145px;
+            }
+        </style>
+    </div>
+
+    <!-- header ad begin -->
+    
+
+
+
+
+
+    <div id="dale_movie_top_nav_index" class="ban-header"></div>
+    
+
+
+
+    <!-- header ad end -->
+
+  </div>
+  </div>
+  <div class="nav-secondary">
+      
+      <div class="nav-items nav-anon">
+          <ul>
+                                  
+                     <li><a href="https://movie.douban.com/nowplaying/">影讯&amp;购票</a></li>
+                 
+                     <li><a href="https://movie.douban.com/explore">选电影</a></li>
+                 
+                    <li class="site-nav-bt">
+                        <a href="https://movie.douban.com/tv/">电视剧</a>
+                    </li>
+                 
+                     <li><a href="https://movie.douban.com/chart">排行榜</a></li>
+                 
+                     <li><a href="https://movie.douban.com/tag/">分类</a></li>
+                 
+                     <li><a href="https://movie.douban.com/review/best/">影评</a></li>
+                 
+                     <li><a href="https://movie.douban.com/annual2015/">2015年度榜单</a></li>
+                 
+                     <li><a href="https://movie.douban.com/standbyme/?source=navigation">豆瓣观影报告</a></li>
+          
+          </ul>
+      </div>
+  </div>
+</div>
+
+
+  
+  <script id="suggResult" type="text/x-jquery-tmpl">
+      <li data-link="{{= url}}">
+          <a href="{{= url}}">
+              <img src="{{= img}}" width="40" />
+              <p>
+                  <em>{{= title}}</em>
+                  {{if year}}
+                      <span>{{= year}}</span>
+                  {{/if}}
+                  {{if sub_title}}
+                      <br /><span>{{= sub_title}}</span>
+                  {{/if}}
+                  {{if address}}
+                      <br /><span>{{= address}}</span>
+                  {{/if}}
+                  {{if episode}}
+                      {{if episode=="unknow"}}
+                          <br /><span>集数未知</span>
+                      {{else}}
+                          <br /><span>共{{= episode}}集</span>
+                      {{/if}}
+                  {{/if}}
+              </p>
+          </a>
+      </li>
+  </script>
+  
+
+
+
+
+
+    
+    <div id="wrapper">
+        
+
+        
+    <div id="content">
+        
+
+        <div class="grid-16-8 clearfix">
+            
+    <div id="dale_movie_homepage_top_large"></div>
+
+            
+            <div class="article">
+                
+    <div id="dale_movie_home_main_top"></div>
+
+    <script id="db-tmpl-subject-tip" type="text/x-jquery-tmpl">
+        <div id="subject-tip">
+            <div class="subject-tip-hd">
+                <h3>{{= title}}<span class="release-year">{{= release}}</span></h3>
+                <p class="star">
+                    <span class="allstar{{= star}}"></span>
+                    <span class="subject-rating">{{= rate.toFixed(1)}}</span>
+                    {{if enough}}
+                        <span class="rater-num">({{= rater}}人评价)</span>
+                    {{/if}}
+                </p>
+            </div>
+            <div class="subject-tip-bd">
+                <ul>
+                    <li><span>{{= duration}}</span><span>{{= type}}</span><span>{{= region}}</span></li>
+                    <li class="director"><span class="label">导演</span><span>{{= director}}</span></li>
+                    <li class="actors"><span class="label">主演</span><span>{{= actors}}</span></li>
+                </ul>
+                {{if intro}}
+                    <div class="subject-intro">
+                        {{= intro}}
+                    </div>
+                {{/if}}
+            </div>
+        </div>
+    </script>
+
+    
+
+    
+    <div id="screening" class="s" data-dstat-areaid="70" data-dstat-mode="click,expose">
+        <div class="screening-hd">
+                <div class="ui-slide-control">
+                    <span class="prev-btn"><a class="btn-prev" href="javascript:void(0)"></a></span>
+                    <span class="next-btn"><a class="btn-next" href="javascript:void(0)"></a></span>
+                </div>
+                <div class="slide-tip"><span class="ui-slide-index">1</span> / <span class="ui-slide-max">6</span></div>
+            <h2>正在热映<span><a onclick="moreurl(this, {from:'mv_l_a'})" href="./nowplaying/">全部正在热映&raquo;</a></span><span><a onclick="moreurl(this, {from:'mv_l_w'})" href="./later/">即将上映&raquo;</a></span></h2>
+        </div>
+        <div class="screening-bd" ng-controller="slideContenController">
+            <ul class="ui-slide-content" data-slide-index="1" data-index-max="6">              
+                    <li class="ui-slide-item s" data-dstat-areaid=70_1 data-dstat-mode=click,expose data-dstat-watch=.ui-slide-content data-dstat-viewport=.screening-bd data-title="美人鱼" data-release="2016" data-rate="7.3" data-star="40" data-trailer="https://movie.douban.com/subject/19944106/trailer" data-ticket="https://movie.douban.com/subject/19944106/cinema/" data-duration="93分钟" data-region="中国大陆" data-director="周星驰" data-actors="邓超 / 罗志祥 / 张雨绮" data-intro="" data-enough="True" data-rater="227426">
+                        <ul class="">
+                            <li class="poster" ng-repeat="film in films">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/19944106/?from=showing">
+                                    <img src="http://localhost:8080/Film/pics/p2316177058.jpg" alt="美人鱼" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/19944106/?from=showing" class="">美人鱼</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar40"></span><span class="subject-rate">7.3</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/19944106/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="叶问3" data-release="2015" data-rate="6.8" data-star="35" data-trailer="https://movie.douban.com/subject/11598977/trailer" data-ticket="https://movie.douban.com/subject/11598977/cinema/" data-duration="105分钟" data-region="中国大陆" data-director="叶伟信" data-actors="甄子丹 / 迈克·泰森 / 张晋" data-intro="" data-enough="True" data-rater="2741">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/11598977/?from=showing">
+                                    <img src="../images/p2322954776.jpg" alt="叶问3" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/11598977/?from=showing" class="">叶问3</a>
+                                    <span class="new-show"></span>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar35"></span><span class="subject-rate">6.8</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/11598977/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="谍影特工 The November Man" data-release="2014" data-rate="6.2" data-star="35" data-trailer="https://movie.douban.com/subject/10792320/trailer" data-ticket="https://movie.douban.com/subject/10792320/cinema/" data-duration="102分钟(中国大陆)" data-region="美国" data-director="罗杰·唐纳森" data-actors="皮尔斯·布鲁斯南 / 欧嘉·柯瑞兰寇 / 卡特琳娜·斯柯松" data-intro="" data-enough="True" data-rater="4277">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/10792320/?from=showing">
+                                    <img src="../images/p2322146824.jpg" alt="谍影特工" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/10792320/?from=showing" class="">谍影特工</a>
+                                    <span class="new-show"></span>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar35"></span><span class="subject-rate">6.2</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/10792320/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="地心营救 The 33" data-release="2015" data-rate="7.3" data-star="40" data-trailer="https://movie.douban.com/subject/10568385/trailer" data-ticket="https://movie.douban.com/subject/10568385/cinema/" data-duration="127分钟(智利)" data-region="美国" data-director="派翠西亚·里根" data-actors="安东尼奥·班德拉斯 / 朱丽叶·比诺什 / 罗德里格·桑托罗" data-intro="" data-enough="True" data-rater="2601">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/10568385/?from=showing">
+                                    <img src="../images/p2316133145.jpg" alt="地心营救" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/10568385/?from=showing" class="">地心营救</a>
+                                    <span class="new-show"></span>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar40"></span><span class="subject-rate">7.3</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/10568385/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item s" data-dstat-areaid=70_2 data-dstat-mode=click,expose data-dstat-watch=.ui-slide-content data-dstat-viewport=.screening-bd data-title="西游记之孙悟空三打白骨精" data-release="2016" data-rate="5.9" data-star="30" data-trailer="https://movie.douban.com/subject/25827963/trailer" data-ticket="https://movie.douban.com/subject/25827963/cinema/" data-duration="120分钟" data-region="中国大陆" data-director="郑保瑞" data-actors="郭富城 / 巩俐 / 冯绍峰" data-intro="" data-enough="True" data-rater="50146">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/25827963/?from=showing">
+                                    <img src="../images/p2315805100.jpg" alt="西游记之孙悟空三打白骨精" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/25827963/?from=showing" class="">西游记之孙悟空...</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar30"></span><span class="subject-rate">5.9</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/25827963/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="圣斗士星矢 聖闘士星矢 Legend of Sanctuary" data-release="2014" data-rate="6.4" data-star="35" data-trailer="https://movie.douban.com/subject/10480973/trailer" data-ticket="https://movie.douban.com/subject/10480973/cinema/" data-duration="93分钟" data-region="日本" data-director="佐藤敬一" data-actors="石川界人 / 赤羽根健治 / 小野贤章" data-intro="" data-enough="True" data-rater="12295">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/10480973/?from=showing">
+                                    <img src="../images/p2321634376.jpg" alt="圣斗士星矢" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/10480973/?from=showing" class="">圣斗士星矢</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar35"></span><span class="subject-rate">6.4</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/10480973/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="卧虎藏龙：青冥宝剑 Crouching Tiger, Hidden Dragon: Sword of Destiny" data-release="2016" data-rate="5.0" data-star="25" data-trailer="https://movie.douban.com/subject/21327512/trailer" data-ticket="https://movie.douban.com/subject/21327512/cinema/" data-duration="103分钟" data-region="中国大陆" data-director="袁和平" data-actors="甄子丹 / 杨紫琼 / 岑勇康" data-intro="" data-enough="True" data-rater="12762">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/21327512/?from=showing">
+                                    <img src="../images/p2320939539.jpg" alt="卧虎藏龙：青冥宝剑" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/21327512/?from=showing" class="">卧虎藏龙：青冥...</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar25"></span><span class="subject-rate">5.0</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/21327512/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="末日迷踪 Left Behind" data-release="2014" data-rate="3.9" data-star="20" data-trailer="https://movie.douban.com/subject/21324299/trailer" data-ticket="https://movie.douban.com/subject/21324299/cinema/" data-duration="110分钟" data-region="美国" data-director="维克·阿姆斯特朗" data-actors="尼古拉斯·凯奇 / 查德·迈克尔·墨瑞 / 卡西·汤普森" data-intro="" data-enough="True" data-rater="4215">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/21324299/?from=showing">
+                                    <img src="../images/p2315662314.jpg" alt="末日迷踪" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/21324299/?from=showing" class="">末日迷踪</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar20"></span><span class="subject-rate">3.9</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/21324299/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item s" data-dstat-areaid=70_3 data-dstat-mode=click,expose data-dstat-watch=.ui-slide-content data-dstat-viewport=.screening-bd data-title="功夫熊猫3 Kung Fu Panda 3" data-release="2016" data-rate="8.0" data-star="40" data-trailer="https://movie.douban.com/subject/11589036/trailer" data-ticket="https://movie.douban.com/subject/11589036/cinema/" data-duration="95分钟" data-region="中国大陆" data-director="余仁英" data-actors="杰克·布莱克 / 布莱恩·科兰斯顿 / 达斯汀·霍夫曼" data-intro="" data-enough="True" data-rater="90124">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/11589036/?from=showing">
+                                    <img src="../images/p2306653420.jpg" alt="功夫熊猫3" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/11589036/?from=showing" class="">功夫熊猫3</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar40"></span><span class="subject-rate">8.0</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/11589036/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="澳门风云3 賭城風雲III" data-release="2016" data-rate="4.1" data-star="20" data-trailer="https://movie.douban.com/subject/26334559/trailer" data-ticket="https://movie.douban.com/subject/26334559/cinema/" data-duration="112分钟" data-region="香港" data-director="刘伟强" data-actors="周润发 / 刘德华 / 张家辉" data-intro="" data-enough="True" data-rater="32388">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/26334559/?from=showing">
+                                    <img src="../images/p2309171908.jpg" alt="澳门风云3" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/26334559/?from=showing" class="">澳门风云3</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar20"></span><span class="subject-rate">4.1</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/26334559/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="火影忍者剧场版：博人传 BORUTO -NARUTO THE MOVIE-" data-release="2015" data-rate="8.6" data-star="45" data-trailer="https://movie.douban.com/subject/26282448/trailer" data-ticket="https://movie.douban.com/subject/26282448/cinema/" data-duration="96分钟" data-region="日本" data-director="山下宏幸" data-actors="三瓶由布子 / 菊池心 / 竹内顺子" data-intro="" data-enough="True" data-rater="29197">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/26282448/?from=showing">
+                                    <img src="../images/p2251539632.jpg" alt="火影忍者剧场版：博人传" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/26282448/?from=showing" class="">火影忍者剧场版...</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar45"></span><span class="subject-rate">8.6</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/26282448/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="托马斯和朋友们：多多岛之迷失宝藏 Thomas &amp; Friends: Sodor&#39;s Legend of the Lost Treasure" data-release="2015" data-rate="6.5" data-star="35" data-trailer="https://movie.douban.com/subject/26356538/trailer" data-ticket="https://movie.douban.com/subject/26356538/cinema/" data-duration="81分钟(中国大陆)" data-region="英国" data-director="大卫·斯特登" data-actors="埃迪·雷德梅恩 / 杰米·坎贝尔·鲍尔 / 约翰·赫特" data-intro="" data-enough="True" data-rater="310">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/26356538/?from=showing">
+                                    <img src="../images/p2316430489.jpg" alt="托马斯和朋友们：多多岛之迷失宝藏" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/26356538/?from=showing" class="">托马斯和朋友们...</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar35"></span><span class="subject-rate">6.5</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/26356538/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item s" data-dstat-areaid=70_4 data-dstat-mode=click,expose data-dstat-watch=.ui-slide-content data-dstat-viewport=.screening-bd data-title="高跟鞋先生" data-release="2016" data-rate="5.5" data-star="30" data-trailer="https://movie.douban.com/subject/26652816/trailer" data-ticket="https://movie.douban.com/subject/26652816/cinema/" data-duration="94分钟" data-region="中国大陆" data-director="陆可" data-actors="杜江 / 薛凯琪 / 余心恬" data-intro="" data-enough="True" data-rater="5171">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/26652816/?from=showing">
+                                    <img src="../images/p2312412325.jpg" alt="高跟鞋先生" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/26652816/?from=showing" class="">高跟鞋先生</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar30"></span><span class="subject-rate">5.5</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/26652816/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="诡娃" data-release="2016" data-rate="2.4" data-star="15" data-trailer="https://movie.douban.com/subject/26680909/trailer" data-ticket="https://movie.douban.com/subject/26680909/cinema/" data-duration="89分钟" data-region="中国大陆" data-director="蒋国权" data-actors="李抒航 / 程媛媛 / 孔维" data-intro="" data-enough="True" data-rater="252">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/26680909/?from=showing">
+                                    <img src="../images/p2315398722.jpg" alt="诡娃" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/26680909/?from=showing" class="">诡娃</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar15"></span><span class="subject-rate">2.4</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/26680909/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="夺命枪火 Colt 45" data-release="2014" data-rate="5.9" data-star="30" data-trailer="https://movie.douban.com/subject/10526498/trailer" data-ticket="https://movie.douban.com/subject/10526498/cinema/" data-duration="84分钟(中国大陆)" data-region="法国" data-director="法布里斯·度·沃尔斯" data-actors="热拉尔·朗万 / 乔伊·斯塔尔 / 阿丽斯·塔格里奥妮" data-intro="" data-enough="True" data-rater="893">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/10526498/?from=showing">
+                                    <img src="../images/p2319273504.jpg" alt="夺命枪火" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/10526498/?from=showing" class="">夺命枪火</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar30"></span><span class="subject-rate">5.9</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/10526498/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="青蛙王国之冰冻大冒险" data-release="2016" data-rate="5.3" data-star="30" data-trailer="https://movie.douban.com/subject/26253893/trailer" data-ticket="https://movie.douban.com/subject/26253893/cinema/" data-duration="83分钟" data-region="中国大陆" data-director="常光希" data-actors="孙楠 / 石班瑜 / 姜瑰瑾" data-intro="" data-enough="True" data-rater="416">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/26253893/?from=showing">
+                                    <img src="../images/p2315804919.jpg" alt="青蛙王国之冰冻大冒险" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/26253893/?from=showing" class="">青蛙王国之冰冻...</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar30"></span><span class="subject-rate">5.3</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/26253893/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item s" data-dstat-areaid=70_5 data-dstat-mode=click,expose data-dstat-watch=.ui-slide-content data-dstat-viewport=.screening-bd data-title="熊出没之熊心归来" data-release="2016" data-rate="6.3" data-star="35" data-trailer="https://movie.douban.com/subject/26330955/trailer" data-ticket="https://movie.douban.com/subject/26330955/cinema/" data-duration="96分钟" data-region="中国大陆" data-director="丁亮" data-actors="张伟 / 张秉君 / 谭笑" data-intro="" data-enough="True" data-rater="3248">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/26330955/?from=showing">
+                                    <img src="../images/p2303088664.jpg" alt="熊出没之熊心归来" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/26330955/?from=showing" class="">熊出没之熊心归...</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar35"></span><span class="subject-rate">6.3</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/26330955/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="当我们年轻的时候" data-release="2016" data-rate="3.1" data-star="15" data-trailer="https://movie.douban.com/subject/26718721/trailer" data-ticket="https://movie.douban.com/subject/26718721/cinema/" data-duration="91分钟" data-region="中国大陆" data-director="长征" data-actors="胡苏涵 / 尹亮 / 陈长海" data-intro="" data-enough="True" data-rater="102">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/26718721/?from=showing">
+                                    <img src="../images/p2315225883.jpg" alt="当我们年轻的时候" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/26718721/?from=showing" class="">当我们年轻的时...</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar15"></span><span class="subject-rate">3.1</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/26718721/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="奔爱" data-release="2016" data-rate="3.4" data-star="20" data-trailer="https://movie.douban.com/subject/26637534/trailer" data-ticket="https://movie.douban.com/subject/26637534/cinema/" data-duration="137分钟" data-region="中国大陆" data-director="张一白" data-actors="章子怡 / 彭于晏 / 佟丽娅" data-intro="" data-enough="True" data-rater="7297">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/26637534/?from=showing">
+                                    <img src="../images/p2312443555.jpg" alt="奔爱" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/26637534/?from=showing" class="">奔爱</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar20"></span><span class="subject-rate">3.4</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/26637534/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="谋杀似水年华" data-release="2016" data-rate="3.7" data-star="20" data-trailer="https://movie.douban.com/subject/26263919/trailer" data-ticket="https://movie.douban.com/subject/26263919/cinema/" data-duration="128分钟" data-region="中国大陆" data-director="陈果" data-actors="杨颖 / 阮经天 / 张超" data-intro="" data-enough="True" data-rater="2343">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/26263919/?from=showing">
+                                    <img src="../images/p2318807517.jpg" alt="谋杀似水年华" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/26263919/?from=showing" class="">谋杀似水年华</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar20"></span><span class="subject-rate">3.7</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/26263919/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item s" data-dstat-areaid=70_6 data-dstat-mode=click,expose data-dstat-watch=.ui-slide-content data-dstat-viewport=.screening-bd data-title="恭喜发财之谈钱说爱" data-release="2016" data-rate="2.8" data-star="15" data-trailer="https://movie.douban.com/subject/26718806/trailer" data-ticket="https://movie.douban.com/subject/26718806/cinema/" data-duration="90分钟" data-region="中国大陆" data-director="孙宏凯" data-actors="曹云金 / 周知 / 杜海涛" data-intro="" data-enough="True" data-rater="471">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/26718806/?from=showing">
+                                    <img src="../images/p2319134681.jpg" alt="恭喜发财之谈钱说爱" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/26718806/?from=showing" class="">恭喜发财之谈钱...</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar15"></span><span class="subject-rate">2.8</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/26718806/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="安娜贝尔 Annabelle" data-release="2014" data-rate="5.4" data-star="30" data-trailer="https://movie.douban.com/subject/25812885/trailer" data-ticket="https://movie.douban.com/subject/25812885/cinema/" data-duration="99分钟" data-region="美国" data-director="约翰·R·莱昂耐迪" data-actors="安娜贝拉·沃丽丝 / 瓦德·霍尔顿 / 托尼·阿门多拉" data-intro="" data-enough="True" data-rater="7940">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/25812885/?from=showing">
+                                    <img src="../images/p2203515671.jpg" alt="安娜贝尔" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/25812885/?from=showing" class="">安娜贝尔</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar30"></span><span class="subject-rate">5.4</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/25812885/cinema/">选座购票</a></span></li>
+                        </ul>
+                        
+                        
+                    <li class="ui-slide-item"  data-title="年兽大作战" data-release="2016" data-rate="6.0" data-star="30" data-trailer="https://movie.douban.com/subject/26361479/trailer" data-ticket="https://movie.douban.com/subject/26361479/cinema/" data-duration="97分钟" data-region="中国大陆" data-director="张扬" data-actors="雷佳音 / 周冬雨 / 陈赫" data-intro="" data-enough="True" data-rater="748">
+                        <ul class="">
+                            <li class="poster">
+                                <a onclick="moreurl(this, {from:'mv_a_pst'})" href="https://movie.douban.com/subject/26361479/?from=showing">
+                                    <img src="../images/p2305489683.jpg" alt="年兽大作战" rel="nofollow" class="" />
+                                </a>
+                            </li>
+                            <li class="title">
+                                <a onclick="moreurl(this, {from:'mv_a_tl'})" href="https://movie.douban.com/subject/26361479/?from=showing" class="">年兽大作战</a>
+                            </li>
+                            <li class="rating">
+                                        <span class="rating-star allstar30"></span><span class="subject-rate">6.0</span>
+                            </li>
+                                <li class="ticket_btn"><span><a onclick="moreurl(this, {from:'mv_b_tc'})" href="https://movie.douban.com/subject/26361479/cinema/">选座购票</a></span></li>
+                        </ul>
+                    <li class="ui-slide-item">
+            </ul>
+        </div>
+    </div>
+    
+    
+
+
+    <!-- douban ad begin -->
+    <div id="movie_home_left_bottom" class="mb20 s" data-dstat-areaid="72" data-dstat-mode="click,expose"></div>
+    <!-- douban ad end -->
+
+        
+        
+<div id="gaia">
+    <div class="detail-pop"></div>
+
+    <div class="fliter-wp">
+        
+<h2>
+    <a href="#gaia_movie" data-type="movie">选电影</a>
+    &nbsp;/&nbsp;
+    <a href="#gaia_tv" data-type="tv">选电视剧</a>
+</h2>
+
+        
+<div class="filter">
+    <form action="get" id="gaia_frm" autocomplete="off">
+        <input type="hidden" name="type" value="movie">
+        <div class="tags">
+            <div class="tag-list"></div>
+            <div class="custom-frm" data-type="tag">
+                <input type="text" />
+                <button>确定</button>
+            </div>
+        </div>
+        <div class="sub-tags">
+            <p class="tip">在 “<strong>热门</strong>” 里进一步筛选：</p>
+            <div class="sub-tag-list"></div>
+            <div class="custom-frm" data-type="sub_tag">
+                <input type="text" />
+                <button>确定</button>
+            </div>
+        </div>
+        <div class="tool">
+            <div class="sort">
+                <label>
+                    <input type="radio" name="sort" value="recommend" checked="checked">按热度排序
+                </label>
+                <label>
+                    <input type="radio" name="sort" value="time">按时间排序
+                </label>
+                <label>
+                    <input type="radio" name="sort" value="rank">按评价排序
+                </label>
+            </div>
+
+            <div class="check">
+                <label>
+                    <input type="checkbox" name="watched" class="">我没看过的
+                </label>
+                <label>
+                    <input type="checkbox" name="playable">可在线播放
+                </label>
+            </div>
+            <input type="hidden" name="page_limit" value="20">
+            <input type="hidden" name="page_start" value="0">
+        </div>
+    </form>
+    <div class="login-tip">
+        注册登录后可以保存自己的观影记录，豆瓣也会根据你的口味为你推荐电影。
+        <a href="javascript:;" class="pop_register" data-ref="https://movie.douban.com?tag_search=true">注册</a> &nbsp;
+        <a href="javascript:;" class="pop_login" data-ref="https://movie.douban.com?tag_search=true">登录</a>
+    </div>
+</div>
+
+        <div class="fliter-handle">筛选器</div>
+    </div>
+    <div class="fliter-placeholder"></div>
+    
+<div class="list-wp">
+    <div class="list"></div>
+    <a class="more" href="javascript:;">载入中...</a>
+</div>
+
+    
+    
+    <script type="text/tmpl" id="tag-tmpl">
+        <label>
+            <%= _.escape(val)%>
+            <input type="radio" name="<%= type%>" value="<%= _.escape(val)%>">
+            <% if (custom) { %>
+                <a href="javascript:;" class="remove">x</a>
+            <% } %>
+        </label>
+    </script>
+
+    <script type="text/tmpl" id="subject-tmpl">
+        <% if (playable) { %>
+        <a class="item" target="_blank" href="<%= url%>?tag=<%= tag%>&from=gaia_video">
+        <% } else {%>
+        <a class="item" target="_blank" href="<%= url%>?tag=<%= tag%>&from=gaia">
+        <% } %>
+            <div class="cover-wp" data-isnew="<%= is_new%>" data-id="<%= id%>">
+                <img src="<%= cover%>" alt="<%= title%>" data-x="<%= cover_x%>" data-y="<%= cover_y%>" onload="loadImg(this)" />
+            </div>
+            <p>
+                <% if (is_new) { %>
+                    <span class="green">
+                        <img src="../images/ic_new.png" width="16" class="new" />
+                    </span>
+                <% } %>
+
+                <%= title%>
+
+                <% if (rate !== '0.0') { %>
+                    <strong><%= rate%></strong>
+                <% } else {%>
+                    <span>暂无评分</span>
+                <% } %>
+            </p>
+            <% if (is_beetle_subject) { %>
+                <div style="width:140px;float:left;margin-top:-22px;cursor:default">
+                    <img class="biz-beetle-rec" style="width:88px;height:12px;opacity:1" src="https://img3.doubanio.com/img/biz/beetle/home/biz-beetle-icon@2x.png">
+                </div>
+            <% } %>
+        </a>
+    </script>
+
+    <script type="text/tmpl" id="subject-info-tmpl">
+        <div class="wp">
+            <div class="info">
+                <% if (playable) { %>
+                <h3><a target="_blank" href="<%= url%>?tag=<%= tag%>&from=gaia_video"><%= title%> (<%= release_year%>)</a></h3>
+                <% } else { %>
+                <h3><a target="_blank" href="<%= url%>?tag=<%= tag%>&from=gaia"><%= title%> (<%= release_year%>)</a></h3>
+                <% } %>
+                <p class="rank">
+                    <% if (rate !== '0.0') { %>
+                        <span class="ll bigstar<%= star%>"></span>&nbsp;&nbsp;
+                        <strong><%= rate%></strong>
+                    <% } else { %>
+                        暂无评分
+                    <% } %>
+                </p>
+                <p class="meta">
+                    <% if (playable) { %>
+                        <span class="green">可播放</span>
+                    <% } %>
+                    <% if (playable && is_new) { %>
+                        <span class="green">新出片源</span>
+                    <% } else if (is_new) { %>
+                        <span class="green">本周新片</span>
+                    <% } %>
+                    <% if (duration) { %>
+                        <span><%= duration%></span>
+                    <% } %>
+                    <% if (episodes_count) { %>
+                        <span><%= episodes_count%>集</span>
+                    <% } %>
+                    <% if (region) { %>
+                        <span><%= region%></span>
+                    <% } %>
+                    <% if (types) { %>
+                        <% _.each (types.slice(0,3), function(type){ %>
+                        <span><%= type%></span>
+                        <% }) %>
+                    <% } %>
+                    <% if (directors.length) { %>
+                        <span><%= directors[0]%>(导演)</span>
+                    <% } %>
+                    <% if (actors) { %>
+                        <% _.each (actors.slice(0,3), function(actor){ %>
+                        <span><%= actor%></span>
+                        <% }) %>
+                    <% } %>
+                </p>
+                <p class="collect-area">
+                    <% if (collection_status === 'F') { %>
+                        <% if (is_tv) { %>
+                            <a href="javascript:;" rel="nofollow" class="j a_collect_btn" name="sbtn-<%= id%>-do">在看</a>
+                        <% } %>
+                        <a href="javascript:;" rel="nofollow" class="j a_collect_btn" name="sbtn-<%= id%>-collect">看过</a>
+                        <span>已想看</span>
+                    <% } else if (is_tv && collection_status === 'N') { %>
+                        <a href="javascript:;" rel="nofollow" class="j a_collect_btn" name="sbtn-<%= id%>-collect">看过</a>
+                        <span>已在看</span>
+                    <% } else if (collection_status === 'P') { %>
+                        <span>已看过</span>
+                    <% } else { %>
+                        <a href="javascript:;" rel="nofollow" class="j a_collect_btn" name="sbtn-<%= id%>-wish">想看</a>
+                        <% if (is_tv) { %>
+                            <a href="javascript:;" rel="nofollow" class="j a_collect_btn" name="sbtn-<%= id%>-do">在看</a>
+                        <% } %>
+                        <a href="javascript:;" rel="nofollow" class="j a_collect_btn" name="sbtn-<%= id%>-collect">看过</a>
+                    <% } %>
+                </p>
+            </div>
+            <% if (short_comment.content) {%>
+            <p class="comment">
+                <%= short_comment.content%>
+                <span>- <%= short_comment.author%>的短评</span>
+            </p>
+            <% } %>
+        </div>
+    </script>
+    
+
+</div>
+
+
+        
+        
+<link rel="stylesheet" href="style/base/gallery.css" />
+<div id="gallery-frames">
+    <div class="gallery-hd">
+            <div class="gallery-ui-slide-control">
+                <span class="prev-btn"><a class="gallery-btn-prev" href="javascript:void(0)"></a></span>
+                <span class="next-btn"><a class="gallery-btn-next" href="javascript:void(0)"></a></span>
+            </div>
+            <div class="slide-tip"><span class="gallery-ui-slide-index">1</span> / <span class="gallery-ui-slide-max">2</span></div>
+            <h2>热门推荐</h2>
+    </div>
+    <div id="hot-gallery">
+        <ul class='ui-slide-content'>
+                <li class='ui-slide-item'>
+                    
+<div class="gallery-frame">
+        <a href="https://movie.douban.com/review/7772151/?from=gallery" target="_blank" data-fid="1327">
+            <img src="../images/c445c84eedb1aa5.jpg" alt="好久没有听到打木桩的声音" width="350" height="240"/>
+        </a>
+    <div class="gallery-detail">
+        <div class="gallery-hd">
+                <a href="https://movie.douban.com/review/7772151/?from=gallery" target="_blank" data-fid="1327">
+                    <h3>好久没有听到打木桩的声音</h3>
+                </a>
+        </div>
+        <div class="gallery-bd">
+            <p>
+                来自<a href="https://www.douban.com/people/roysen/" target="_blank">漪漣</a>的评论:<br/>
+                你不在江湖，江湖里依然有你的传说。
+            </p>
+        </div>
+        <span class="gallery-footnote">推广</span>
+    </div>
+</div>
+
+                </li>
+                <li class='ui-slide-item'>
+                    
+<div class="gallery-frame">
+        <a href="https://movie.douban.com/doubanfilmawards_nominees_6th/?from=gallery" target="_blank" data-fid="1320">
+            <img src="../images/4250c99663f73c4.jpg" alt="第6届豆瓣电影鑫像奖【提名名单】" width="350" height="240"/>
+        </a>
+    <div class="gallery-detail">
+        <div class="gallery-hd">
+                <a href="https://movie.douban.com/doubanfilmawards_nominees_6th/?from=gallery" target="_blank" data-fid="1320">
+                    <h3>第6届豆瓣电影鑫像奖【提名名单】</h3>
+                </a>
+        </div>
+        <div class="gallery-bd">
+            <p>
+                一年一度的豆瓣电影选择奖进入决选阶段，30个年度佳片和烂片奖，期待你的投票。
+            </p>
+        </div>
+        <span class="gallery-footnote">推广</span>
+    </div>
+</div>
+
+                </li>
+        </ul>
+    </div>
+</div>
+
+
+    
+
+
+    
+    <div id="reviews" class="s" data-dstat-areaid="77" data-dstat-mode="click,expose">
+        <div class="reviews-hd">
+            <h2>最受欢迎的影评<span><a href="/review/best/">更多热门影评&raquo;</a></span><span><a href="/review/latest/">新片影评&raquo;</a></span></h2>
+        </div>
+        <div class="reviews-bd">
+                
+    <div class="review ">
+        <div class="review-hd">
+            <a href="https://movie.douban.com/subject/25831874/?from=reviews">
+                    <img class="lazy"
+                        data-original="../images/p2315652554.jpg"
+                        src="https://img3.doubanio.com/f/movie/54a69da17972770faffce1f758c820ecb8e440af/pics/movie/grey.gif"
+                        alt="太阳的后裔" />
+            </a>
+        </div>
+        <div class="review-bd">
+            <h3><a href="https://movie.douban.com/review/7793584/" class="">《太阳的后裔》：我喜欢这种势均力敌的爱情</a></h3>
+            <div class="review-meta">
+                <a href="https://www.douban.com/people/mimengbb/">咪蒙</a> 评论
+                <a href="https://movie.douban.com/subject/25831874/?from=reviews">《太阳的后裔》</a>
+
+                    <span class="allstar50"></span>
+            </div>
+            <div class="review-content">
+                最近不要跟我说话。
+我没空！！！！！！
+除非你跟我谈论一个话题：《太阳的后裔》。
+这部韩剧题材够新，讲的是战地爱情。
+女主是外科医生，男主是联合国维和部队的特种兵，两人在男主休假时因为误会相遇，一见钟情，迅速约会，却因价值观不合而快速分...
+                    <a href="https://movie.douban.com/review/7793584/">(全文)</a>
+            </div>
+        </div>
+    </div>
+
+                
+    <div class="review ">
+        <div class="review-hd">
+            <a href="https://movie.douban.com/subject/26163266/?from=reviews">
+                    <img class="lazy"
+                        data-original="../images/p2322058074.jpg"
+                        src="https://img3.doubanio.com/f/movie/54a69da17972770faffce1f758c820ecb8e440af/pics/movie/grey.gif"
+                        alt="因为爱情有幸福" />
+            </a>
+        </div>
+        <div class="review-bd">
+            <h3><a href="https://movie.douban.com/review/7797200/" class="">当我们在谈论“国民好老公”的时候，我们在谈论什么</a></h3>
+            <div class="review-meta">
+                <a href="https://www.douban.com/people/136194748/">桢瑶</a> 评论
+                <a href="https://movie.douban.com/subject/26163266/?from=reviews">《因为爱情有幸福》</a>
+
+                    <span class="allstar50"></span>
+            </div>
+            <div class="review-content">
+                女性主义将会首次开启一个解放男性的时代
+
+两性，婚姻，生育，在任何国家的社交和媒体上，都是热议话题，本国尤甚。不知道什么时候开始，“剩女”概念横空出世，近年伴随的还有二胎政策，晚婚晚育福利取消，4000万剩男【可笑的是这个也是女性的错】，从...
+                    <a href="https://movie.douban.com/review/7797200/">(全文)</a>
+            </div>
+        </div>
+    </div>
+
+                
+    <div class="review ">
+        <div class="review-hd">
+            <a href="https://movie.douban.com/subject/25817053/?from=reviews">
+                    <img class="lazy"
+                        data-original="../images/p2204200412.jpg"
+                        src="https://img3.doubanio.com/f/movie/54a69da17972770faffce1f758c820ecb8e440af/pics/movie/grey.gif"
+                        alt="女医明妃传" />
+            </a>
+        </div>
+        <div class="review-bd">
+            <h3><a href="https://movie.douban.com/review/7796490/" class="">…</a></h3>
+            <div class="review-meta">
+                <a href="https://www.douban.com/people/63818229/">Tina_小滚</a> 评论
+                <a href="https://movie.douban.com/subject/25817053/?from=reviews">《女医明妃传》</a>
+
+                    <span class="allstar10"></span>
+            </div>
+            <div class="review-content">
+                连我妈都看不下去的电视剧我还能说什么…
+
+对于剧情，算了咱不说历史，这要是叫历史，我几年看的历史书那就都是喂了狗了…
+
+就说演技，老干部最让我惊艳的演技至今都是武十郎里的李亚寿，之后我只看到只是一个时而神经时而面瘫只有脸还能看的人了…
+
+女主...
+                    <a href="https://movie.douban.com/review/7796490/">(全文)</a>
+            </div>
+        </div>
+    </div>
+
+                
+    <div class="review last">
+        <div class="review-hd">
+            <a href="https://movie.douban.com/subject/2033822/?from=reviews">
+                    <img class="lazy"
+                        data-original="../images/s4369125.jpg"
+                        src="https://img3.doubanio.com/f/movie/54a69da17972770faffce1f758c820ecb8e440af/pics/movie/grey.gif"
+                        alt="美食、祈祷和恋爱" />
+            </a>
+        </div>
+        <div class="review-bd">
+            <h3><a href="https://movie.douban.com/review/7796529/" class="">幸福没那么简单</a></h3>
+            <div class="review-meta">
+                <a href="https://www.douban.com/people/134534855/">倔强的石头</a> 评论
+                <a href="https://movie.douban.com/subject/2033822/?from=reviews">《美食、祈祷和恋爱》</a>
+
+                    <span class="allstar30"></span>
+            </div>
+            <div class="review-content">
+                      “我们都希望一切如旧
+      在痛苦中过着安定的生活
+      因为我们害怕改变 害怕事物会变得支离破碎”
+
+      许多人吐槽这部片琐碎、平淡、不知所云，的确，跟大多数美国电影相比，它的确缺少那一点点的震撼。电影无法将原著小说中细腻感性的...
+                    <a href="https://movie.douban.com/review/7796529/">(全文)</a>
+            </div>
+        </div>
+    </div>
+
+        </div>
+    </div>
+
+    
+
+
+
+            </div>
+            <div class="aside">
+                
+    
+    
+
+    
+    
+
+    <div class="rating_answer">
+        <ul>
+            <li>
+                <a href="https://blog.douban.com/douban/2015/12/18/3060/" target="_blank">豆瓣电影评分八问</a>
+            </li>
+        </ul>
+    </div>
+
+
+    
+    <div id="cinemas-search">
+        <div class="cinemas-search-bd clearfix">
+            <div id="city">
+                <span id="city-id" data-city-id="108288">北京</span>
+                
+                
+    
+    
+    
+
+    <div id="cities-list">
+        <div class="cities-list-hd">
+            <span class="on">热门</span>
+            <span>A - G</span>
+            <span>H - L</span>
+            <span>M - T</span>
+            <span>W - Z</span>
+        </div>
+        <div class="cities-list-bd">
+            <div class="cities-list-item hot">
+                        <span><a class="city-item" href="javascript:;" id="108288" uid="beijing">北京</a></span>
+                        <span><a class="city-item" href="javascript:;" id="108296" uid="shanghai">上海</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118281" uid="guangzhou">广州</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118282" uid="shenzhen">深圳</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118318" uid="chengdu">成都</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118254" uid="wuhan">武汉</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118172" uid="hangzhou">杭州</a></span>
+                        <span><a class="city-item" href="javascript:;" id="108309" uid="chongqing">重庆</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118237" uid="zhengzhou">郑州</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118159" uid="nanjing">南京</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118371" uid="xian">西安</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118163" uid="suzhou">苏州</a></span>
+                        <span><a class="city-item" href="javascript:;" id="108289" uid="tianjin">天津</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118267" uid="changsha">长沙</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118200" uid="fuzhou">福州</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118123" uid="shenyang">沈阳</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118220" uid="jinan">济南</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118174" uid="wenzhou">温州</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118146" uid="haerbin">哈尔滨</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118183" uid="hefei">合肥</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118221" uid="qingdao">青岛</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118201" uid="xiamen">厦门</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118124" uid="dalian">大连</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118297" uid="dongguan">东莞</a></span>
+                        <span><a class="city-item" href="javascript:;" id="118137" uid="changchun">长春</a></span>
+            </div>
+                <div class="cities-list-item" style="display:none;">
+                        <dl class="city-mod">
+                                <dt>A</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118190" uid="anqing">安庆</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118244" uid="anyang">安阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118125" uid="anshan">鞍山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118342" uid="anshun">安顺</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118379" uid="ankang">安康</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118421" uid="aletai">阿勒泰</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118413" uid="akesu">阿克苏</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118336" uid="aba">阿坝</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>B</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="108288" uid="beijing">北京</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118093" uid="baoding">保定</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118373" uid="baoji">宝鸡</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118235" uid="binzhou">滨州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118112" uid="baotou">包头</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118197" uid="bozhou">亳州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118185" uid="bangbu">蚌埠</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118306" uid="beihai">北海</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118118" uid="bayannaoer">巴彦淖尔</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118383" uid="baiyin">白银</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118127" uid="benxi">本溪</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118142" uid="baishan">白山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118144" uid="baicheng">白城</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118344" uid="bijie">毕节</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118334" uid="bazhong">巴中</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118351" uid="baoshan">保山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118416" uid="bayinguoleng">巴音郭楞</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118311" uid="baise">百色</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="131586" uid="131586">保亭</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>C</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="108309" uid="chongqing">重庆</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118318" uid="chengdu">成都</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118267" uid="changsha">长沙</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118137" uid="changchun">长春</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118162" uid="changzhou">常州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118276" uid="chenzhou">郴州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118192" uid="chuzhou">滁州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118096" uid="cangzhou">沧州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118273" uid="changde">常德</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118103" uid="changzhi">长治</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118299" uid="chaozhou">潮州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118114" uid="chifeng">赤峰</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118135" uid="chaoyang">朝阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118095" uid="chengde">承德</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118417" uid="changji">昌吉</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="129306" uid="129306">常熟</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118315" uid="chongzuo">崇左</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118198" uid="chizhou">池州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118359" uid="chuxiong">楚雄</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>D</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118297" uid="dongguan">东莞</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118124" uid="dalian">大连</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118151" uid="daqing">大庆</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118224" uid="dongying">东营</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118233" uid="dezhou">德州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118322" uid="deyang">德阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118360" uid="dali">大理</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118128" uid="dandong">丹东</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118100" uid="datong">大同</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118331" uid="dazhou">达州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118361" uid="dehong">德宏</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="131433" uid="danzhou">儋州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118391" uid="dingxi">定西</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="131577" uid="131577">东方</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118363" uid="diqing">迪庆</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>E</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118116" uid="eerduosi">鄂尔多斯</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118266" uid="enshi">恩施</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118261" uid="ezhou">鄂州</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>F</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118286" uid="foshan">佛山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118200" uid="fuzhou">福州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118218" uid="118218">抚州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118193" uid="fuyang">阜阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118126" uid="fushun">抚顺</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118131" uid="fuxin">阜新</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118307" uid="fangchenggang">防城港</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>G</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118281" uid="guangzhou">广州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118215" uid="ganzhou">赣州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118339" uid="guiyang">贵阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118304" uid="guilin">桂林</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118324" uid="guangyuan">广元</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118330" uid="guangan">广安</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118406" uid="guyuan">固原</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118309" uid="guigang">贵港</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118337" uid="ganzi">甘孜</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118394" uid="gannan">甘南</a></span>
+                                </dd>
+                        </dl>
+                </div>
+                <div class="cities-list-item" style="display:none;">
+                        <dl class="city-mod">
+                                <dt>H</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118172" uid="hangzhou">杭州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118183" uid="hefei">合肥</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118146" uid="haerbin">哈尔滨</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118291" uid="huizhou">惠州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118091" uid="handan">邯郸</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118176" uid="huzhou">湖州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118270" uid="hengyang">衡阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118166" uid="huaian">淮安</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118111" uid="huhehaote">呼和浩特</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118263" uid="huanggang">黄冈</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118117" uid="hulunbeier">呼伦贝尔</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118255" uid="huangshi">黄石</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118357" uid="honghe">红河</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118294" uid="heyuan">河源</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118236" uid="heze">菏泽</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118316" uid="haikou">海口</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118191" uid="huangshan">黄山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118377" uid="hanzhong">汉中</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118098" uid="hengshui">衡水</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118136" uid="huludao">葫芦岛</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118278" uid="huaihua">怀化</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118242" uid="hebi">鹤壁</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118186" uid="huainan">淮南</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118188" uid="huaibei">淮北</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118156" uid="heihe">黑河</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118312" uid="hezhou">贺州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118313" uid="hechi">河池</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118402" uid="haixi">海西</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118183" uid="hefei">合肥</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118149" uid="hegang">鹤岗</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118411" uid="hami">哈密</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118396" uid="haidong">海东</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>J</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118220" uid="jinan">济南</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118178" uid="jinhua">金华</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118175" uid="jiaxing">嘉兴</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118287" uid="jiangmen">江门</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118212" uid="jiujiang">九江</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118228" uid="jining">济宁</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118216" uid="jian">吉安</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118258" uid="jingzhou">荆州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118241" uid="jiaozuo">焦作</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118260" uid="jingmen">荆门</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118300" uid="jieyang">揭阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="129059" uid="jilin">吉林</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118104" uid="jincheng">晋城</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118129" uid="jinzhou">锦州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118210" uid="jingdezhen">景德镇</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118154" uid="jiamusi">佳木斯</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="128517" uid="jiyuan">济源</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118389" uid="jiuquan">酒泉</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118106" uid="jinzhong">晋中</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118148" uid="jixi">鸡西</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118382" uid="jinchang">金昌</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118385" uid="jiayuguan">嘉峪关</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="108294" uid="jilinsheng">吉林</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>K</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118348" uid="kunming">昆明</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118238" uid="kaifeng">开封</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118409" uid="kelamayi">克拉玛依</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="131410" uid="131410">昆山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="130313" uid="130313">开平</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118414" uid="kashen">喀什</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="131410" uid="131410">昆山</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>L</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118381" uid="lanzhou">兰州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118232" uid="linyi">临沂</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118239" uid="luoyang">洛阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118109" uid="linfen">临汾</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118182" uid="lishui">丽水</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118196" uid="luan">六安</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118097" uid="langfang">廊坊</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118327" uid="leshan">乐山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118234" uid="liaocheng">聊城</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118207" uid="longyan">龙岩</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118279" uid="loudi">娄底</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118110" uid="lvliang">吕梁</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118165" uid="lianyungang">连云港</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118303" uid="liuzhou">柳州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118247" uid="luohe">漯河</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118321" uid="luzhou">泸州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118132" uid="liaoyang">辽阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118340" uid="liupanshui">六盘水</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118392" uid="longnan">陇南</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118338" uid="liangshan">凉山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118231" uid="laiwu">莱芜</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118364" uid="lasa">拉萨</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118353" uid="lijiang">丽江</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118314" uid="laibin">来宾</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118140" uid="liaoyuan">辽源</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118355" uid="lincang">临沧</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118393" uid="linxia">临夏</a></span>
+                                </dd>
+                        </dl>
+                </div>
+                <div class="cities-list-item" style="display:none;">
+                        <dl class="city-mod">
+                                <dt>M</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118323" uid="mianyang">绵阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118187" uid="maanshan">马鞍山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118289" uid="maoming">茂名</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118292" uid="meizhou">梅州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118332" uid="meishan">眉山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118153" uid="mudanjiang">牡丹江</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>N</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118159" uid="nanjing">南京</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118173" uid="ningbo">宁波</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118164" uid="nantong">南通</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118209" uid="nanchang">南昌</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118302" uid="nanning">南宁</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118208" uid="ningde">宁德</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118328" uid="nanchong">南充</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118249" uid="nanyang">南阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118206" uid="nanping">南平</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118326" uid="neijiang">内江</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>P</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118202" uid="putian">莆田</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118133" uid="panjin">盘锦</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="130880" uid="puer">普洱</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118240" uid="pingdingshan">平顶山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118211" uid="pingxiang">萍乡</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118245" uid="puyang">濮阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118320" uid="panzhihua">攀枝花</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118388" uid="pingliang">平凉</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>Q</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118221" uid="qingdao">青岛</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118204" uid="quanzhou">泉州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118179" uid="quzhou">衢州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118349" uid="qujing">曲靖</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118296" uid="qingyuan">清远</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118090" uid="qinhuangdao">秦皇岛</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118345" uid="qianxinan">黔西南</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118347" uid="qiannan">黔南</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118390" uid="qingyang">庆阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118147" uid="qiqihaer">齐齐哈尔</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118308" uid="qinzhou">钦州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="128466" uid="qianjiang">潜江</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118346" uid="qiandongnan">黔东南</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118155" uid="qitaihe">七台河</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="131407" uid="qionghai">琼海</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>R</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118230" uid="rizhao">日照</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>S</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="108296" uid="shanghai">上海</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118282" uid="shenzhen">深圳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118163" uid="suzhou">苏州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118123" uid="shenyang">沈阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118088" uid="shijiazhuang">石家庄</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118219" uid="shangrao">上饶</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118177" uid="shaoxing">绍兴</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118284" uid="shantou">汕头</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118203" uid="sanming">三明</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118171" uid="suqian">宿迁</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118250" uid="shangqiu">商丘</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118285" uid="shaoguan">韶关</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118157" uid="suihua">绥化</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118257" uid="shiyan">十堰</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118325" uid="suining">遂宁</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118139" uid="siping">四平</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118271" uid="shaoyang">邵阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118317" uid="sanya">三亚</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118194" uid="118194">宿州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118293" uid="shanwei">汕尾</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118265" uid="suizhou">随州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118143" uid="songyuan">松原</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118150" uid="shuangyashan">双鸭山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118248" uid="sanmenxia">三门峡</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118404" uid="shizuishan">石嘴山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118105" uid="shuozhou">朔州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118380" uid="shangluo">商洛</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="128496" uid="shihezi">石河子</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>T</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="108289" uid="tianjin">天津</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118181" uid="118181">台州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118170" uid="taizhou">泰州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118099" uid="taiyuan">太原</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118089" uid="tangshan">唐山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118229" uid="taian">泰安</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118134" uid="tieling">铁岭</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118115" uid="tongliao">通辽</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118343" uid="tongren">铜仁</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118189" uid="tongling">铜陵</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118141" uid="tonghua">通化</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118384" uid="tianshui">天水</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118372" uid="tongchuan">铜川</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="128464" uid="tianmen">天门</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118420" uid="tacheng">塔城</a></span>
+                                </dd>
+                        </dl>
+                </div>
+                <div class="cities-list-item" style="display:none;">
+                        <dl class="city-mod">
+                                <dt>W</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118254" uid="wuhan">武汉</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118160" uid="wuxi">无锡</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118174" uid="wenzhou">温州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118225" uid="weifang">潍坊</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118408" uid="wulumuqi">乌鲁木齐</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118184" uid="wuhu">芜湖</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118227" uid="weihai">威海</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118375" uid="weinan">渭南</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118119" uid="wulanchabu">乌兰察布</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118305" uid="wuzhou">梧州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118356" uid="wenshan">文山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118113" uid="wuhai">乌海</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118386" uid="wuwei">武威</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="129309" uid="129309">吴江区</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118405" uid="wuzhong">吴忠</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="131497" uid="wenchang">文昌</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="131575" uid="131575">五指山</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>X</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118371" uid="xian">西安</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118201" uid="xiamen">厦门</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118161" uid="xuzhou">徐州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118251" uid="xinyang">信阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118243" uid="xinxiang">新乡</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118256" uid="xiangyang">襄阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118269" uid="xiangtan">湘潭</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118092" uid="xingtai">邢台</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118246" uid="xuchang">许昌</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118199" uid="xuancheng">宣城</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118395" uid="xining">西宁</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118213" uid="xinyu">新余</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118262" uid="xiaogan">孝感</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118264" uid="xianning">咸宁</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118374" uid="xianyang">咸阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="128465" uid="xiantao">仙桃</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118280" uid="xiangxi">湘西</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118358" uid="xishuangbanna">西双版纳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118108" uid="xinzhou">忻州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118120" uid="xilinguole">锡林郭勒</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118122" uid="xinganmeng">兴安盟</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118122" uid="xinganmeng">兴安盟</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>Y</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118226" uid="yantai">烟台</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118167" uid="yancheng">盐城</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118168" uid="yangzhou">扬州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118217" uid="yichun">宜春</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118403" uid="yinchuan">银川</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118259" uid="yichang">宜昌</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118107" uid="yuncheng">运城</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118130" uid="yingkou">营口</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118378" uid="118378">榆林</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118329" uid="yibin">宜宾</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118272" uid="yueyang">岳阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118295" uid="yangjiang">阳江</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118277" uid="yongzhou">永州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118214" uid="yingtan">鹰潭</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118145" uid="yanbian">延边</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118376" uid="yanan">延安</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118310" uid="yulin">玉林</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118350" uid="yuxi">玉溪</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118419" uid="yili">伊犁</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118275" uid="yiyang">益阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118301" uid="yunfu">云浮</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118102" uid="yangquan">阳泉</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118333" uid="yaan">雅安</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118152" uid="118152">伊春</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="131061" uid="131061">杨凌区</a></span>
+                                </dd>
+                        </dl>
+                        <dl class="city-mod">
+                                <dt>Z</dt>
+                                <dd>
+                                        <span><a class="city-item" href="javascript:;" id="118237" uid="zhengzhou">郑州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118298" uid="zhongshan">中山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118169" uid="zhenjiang">镇江</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118283" uid="zhuhai">珠海</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118222" uid="zibo">淄博</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118288" uid="zhanjiang">湛江</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118268" uid="zhuzhou">株洲</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118094" uid="zhangjiakou">张家口</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118205" uid="zhangzhou">漳州</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118223" uid="zaozhuang">枣庄</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118290" uid="zhaoqing">肇庆</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118252" uid="zhoukou">周口</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118253" uid="zhumadian">驻马店</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118319" uid="zigong">自贡</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118180" uid="zhoushan">舟山</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118341" uid="zunyi">遵义</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118335" uid="ziyang">资阳</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118274" uid="zhangjiajie">张家界</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118387" uid="zhangye">张掖</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118407" uid="zhongwei">中卫</a></span>
+                                        <span><a class="city-item" href="javascript:;" id="118352" uid="zhaotong">昭通</a></span>
+                                </dd>
+                        </dl>
+                </div>
+            <div class="arrow"><span></span></div>
+        </div>
+    </div>
+
+
+            </div>
+            
+            
+    <style>
+        #cinemas-suggestion{position:relative}#cinemas-suggestion-list{position:absolute;left:0;top:28px;display:none;width:310px;z-index:50;background-color:#fff;color:#a19e9b;text-align:left;border:1px solid #dfdfdf;border-radius:3px;box-shadow:0 1px 2px rgba(0,0,0,.3)}#cinemas-suggestion li{line-height:24px;cursor:pointer;font-size:14px;padding:5px 0 5px 10px}#cinemas-suggestion li p{margin:0;font-size:12px;white-space:nowrap;text-overflow:ellipsis;overflow:hidden;width:260px}#cinemas-suggestion a{color:#a19e9b}#cinemas-suggestion a:hover{background:0}#cinemas-suggestion a em{color:#333;font-weight:700;font-style:normal}#cinemas-suggestion .hover{background-color:#f5f5f5;border:0 none}#cinemas-suggestion input{border:1px solid #e0e0e0;padding:5px 4px;color:#a19e9b;color:#333;width:200px}#cinemas-suggestion-input{position:relative}#cinemas-suggestion-search,#cinemas-suggestion-search:hover{display:block;width:12px;height:12px;position:absolute;top:8px;right:10px;background:url(../images/focus_search.png) no-repeat -12px 0;font-size:0}#cinemas-suggestion .placeholder{color:silver}#cinemas-suggestion .auto-tip,#cinemas-suggestion .auto-tip a{font-size:12px;color:#369}#cinemas-suggestion .auto-tip li{font-size:12px;color:#111;line-height:18px}#cinemas-suggestion h4{height:auto;margin:15px 0 5px 10px;background:0;color:#111;line-height:18px}
+    </style>
+
+    <div id="cinemas-suggestion">
+        <div id="cinemas-suggestion-input">
+            <input type="text" placeholder="搜索本地影院" />
+            <a id="cinemas-suggestion-search">搜影院</a>
+        </div>
+        <div id="cinemas-suggestion-list"></div>
+    </div>
+
+    <script>
+        Do.ready(
+            '../style/cinemas_suggestion.js',
+            'https://img3.doubanio.com/f/movie/e1282dc8f28dc586f3172ccb49b4de5da3a9dbbb/js/movie/simplePlaceholder.js',
+            function(){
+                $('input[placeholder]').simplePlaceholder();
+            }
+        );
+    </script>
+
+        </div>
+    </div>
+    
+    
+
+
+    <!-- douban ad begin -->
+    <div id="dale_movie_home_side_top"></div>
+    <div id="dale_movie_home_top_right" class="s" data-dstat-areaid="71" data-dstat-mode="click,expose"></div>
+    <!-- douban ad end -->
+
+    
+  
+  
+  
+  <div class="hot_link">
+    <h2> 电影活动 &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;· </h2>
+    <ul>
+          <li>
+              <a href="https://site.douban.com/movieclub/widget/biz_album/191176012/photo/2323173673/" data-bid="1140" target="_blank">
+                  福利派送站丨《疯狂动物城》购票送周边
+              </a>
+          </li>
+          <li>
+              <a href="https://movie.douban.com/doubanfilmawards_nominees_6th/" data-bid="1137" target="_blank">
+                  第六届豆瓣电影鑫像奖【提名名单】
+              </a>
+          </li>
+          <li>
+              <a href="https://site.douban.com/movieclub/widget/notes/190220334/note/542790533/" data-bid="1128" target="_blank">
+                  资讯 |《荒野猎人》3月18日内地上映
+              </a>
+          </li>
+    </ul>
+  </div>
+
+
+    <!-- douban ad begin -->
+    <div id="dale_movie_home_top_right_ford" class="s" data-dstat-areaid="71" data-dstat-mode="click,expose"></div>
+    <div id="dale_movie_home_top_right2" class="s" data-dstat-areaid="71" data-dstat-mode="click,expose"></div>
+    <!-- douban ad end -->
+
+
+    
+    <div id="billboard" class="s" data-dstat-areaid="75" data-dstat-mode="click,expose">
+        <div class="billboard-hd">
+            <h2>本周口碑榜<span><a href="/chart">更多榜单&raquo;</a></span></h2>
+        </div>
+        <div class="billboard-bd">
+            <table>
+                    <tr>
+                        <td class="order">1</td>
+                        <td class="title"><a onclick="moreurl(this, {from:'mv_rk'})" href="https://movie.douban.com/subject/24751756/">老炮儿</a></td>
+                    </tr>
+                    <tr>
+                        <td class="order">2</td>
+                        <td class="title"><a onclick="moreurl(this, {from:'mv_rk'})" href="https://movie.douban.com/subject/25787888/">八恶人</a></td>
+                    </tr>
+                    <tr>
+                        <td class="order">3</td>
+                        <td class="title"><a onclick="moreurl(this, {from:'mv_rk'})" href="https://movie.douban.com/subject/10757577/">卡罗尔</a></td>
+                    </tr>
+                    <tr>
+                        <td class="order">4</td>
+                        <td class="title"><a onclick="moreurl(this, {from:'mv_rk'})" href="https://movie.douban.com/subject/25895901/">海街日记</a></td>
+                    </tr>
+                    <tr>
+                        <td class="order">5</td>
+                        <td class="title"><a onclick="moreurl(this, {from:'mv_rk'})" href="https://movie.douban.com/subject/5327268/">荒野猎人</a></td>
+                    </tr>
+                    <tr>
+                        <td class="order">6</td>
+                        <td class="title"><a onclick="moreurl(this, {from:'mv_rk'})" href="https://movie.douban.com/subject/3077412/">寻龙诀</a></td>
+                    </tr>
+                    <tr>
+                        <td class="order">7</td>
+                        <td class="title"><a onclick="moreurl(this, {from:'mv_rk'})" href="https://movie.douban.com/subject/3071604/">丹麦女孩</a></td>
+                    </tr>
+                    <tr>
+                        <td class="order">8</td>
+                        <td class="title"><a onclick="moreurl(this, {from:'mv_rk'})" href="https://movie.douban.com/subject/20514947/">龙虾</a></td>
+                    </tr>
+                    <tr>
+                        <td class="order">9</td>
+                        <td class="title"><a onclick="moreurl(this, {from:'mv_rk'})" href="https://movie.douban.com/subject/25881247/">边境杀手</a></td>
+                    </tr>
+                    <tr>
+                        <td class="order">10</td>
+                        <td class="title"><a onclick="moreurl(this, {from:'mv_rk'})" href="https://movie.douban.com/subject/10594965/">实习生</a></td>
+                    </tr>
+            </table>
+        </div>
+    </div>
+
+    
+
+
+
+    <!-- douban ad begin -->
+    <div id="dale_movie_home_bottom_right"></div>
+    <!-- douban ad end -->
+
+    
+    <div id="show-redeem-block">
+        <p>
+            <span>
+                <a class="mine" href="/ticket/redeem/" target="_blank">> 通兑券换票</a>
+            </span>
+        </p>
+    </div>
+    
+
+
+    
+    
+
+    <div id="doulist">
+        <h2>热门豆列</h2>
+        <ul>
+            <li>
+            <span>2136推荐</span>
+            <div class="title"><a target="_blank" href="https://www.douban.com/doulist/243559/">★豆瓣高分电影榜★ （中）8.5-8.3分</a></div>
+            </li>
+            <li>
+            <span>4260推荐</span>
+            <div class="title"><a target="_blank" href="https://www.douban.com/doulist/14897/">【英国制造】</a></div>
+            </li>
+        </ul>
+    </div>
+
+
+    
+    <div id="contact-and-cooperation">
+        <div class="contact-and-cooperation-hd">
+            <h2>合作联系</h2>
+        </div>
+        <div class="contact-and-cooperation-bd">
+            <ul>
+                <li><a href="/movie_site/apply_form">申请开通影片小站</a></li>
+                <li><a href="/cinema/apply">申请开通电影院小站</a></li>
+                    <li>咨询通兑券合作及购买</li>
+                <li class="mail"><img src="../images/email_movie.png" />邮箱：</li>
+            </ul>
+        </div>
+    </div>
+    
+
+    <br/>
+    
+    
+    <div class="contact mod">
+        <h2>关注我们</h2>
+        <ul class="embassy-list clearfix">
+            <li>
+                <a href="http://weibo.com/doubanfilm" target="_blank" class="icon-embassy-weibo"></a>
+                <a href="http://weibo.com/doubanfilm" target="_blank" class="primary-link">微博</a>
+            </li>
+            <li>
+                <a class="icon-embassy-weixin">
+                    <div class="hover"><img src="https://img3.doubanio.com/f/movie/2e2ea342f4f4590300de32c5f30a9184176b3541/pics/movie/home_wechat_qrcode@2x.jpg" width="130px" height="130px"></div>
+                </a>
+                <a class="primary-link" href="javascript:;">微信</a>
+            </li>
+            <li>
+                <a href="https://site.douban.com/doubanfilmawards/" target="_blank" class="icon-embassy-award-site"></a>
+                <a href="https://site.douban.com/doubanfilmawards/" target="_blank" class="primary-link">鑫像奖小站</a>
+            </li>
+            <li>
+                <a href="https://site.douban.com/movieclub/" target="_blank" class="icon-embassy-club-site"></a>
+                <a href="https://site.douban.com/movieclub/" target="_blank" class="primary-link">观影club</a>
+            </li>
+        </ul>
+    </div>
+
+    <!-- douban ad begin -->
+    
+
+<style>
+    .qrcode-app {
+        margin: 20px 0;
+    }
+    .qrcode-app a.download {
+        display: block;
+        width: 300px;
+        height: 80px;
+        background: url(/pics/qrcode_app@2x.png) no-repeat;
+        background-size: contain;
+        background-image: -webkit-image-set(url(/pics/qrcode_app.png) 1x, url(/pics/qrcode_app@2x.png) 2x);
+        background-image: -moz-image-set(url(/pics/qrcode_app.png) 1x, url(/pics/qrcode_app@2x.png) 2x);
+        background-image: -ms-image-set(url(/pics/qrcode_app.png) 1x, url(/pics/qrcode_app@2x.png) 2x);
+        background-image: -o-image-set(url(/pics/qrcode_app.png) 1x, url(/pics/qrcode_app@2x.png) 2x);
+    }
+</style>
+<div class="qrcode-app">
+    <a class="download" href="https://www.douban.com/doubanapp/app?channel=Db_Homepage_Bar&amp;direct_dl=1" target="_blank">
+    </a>
+</div>
+
+    <!-- douban ad end -->
+
+    <!-- douban ad begin -->
+    <div id="dale_movie_home_bottom_right_down"></div>
+    <!-- douban ad end -->
+
+            </div>
+            <div class="extra">
+                
+    <!-- douban ad begin -->
+    <div id="dale_movie_homepage_bottom"></div>
+    <!-- douban ad end -->
+
+            </div>
+        </div>
+    </div>
+
+        
+    <div id="footer">
+            <div class="footer-extra"></div>
+        
+<span id="icp" class="fleft gray-link">
+    &copy; 2005－2016 douban.com, all rights reserved 北京豆网科技有限公司
+</span>
+
+<a href="https://www.douban.com/hnypt/variformcyst.py" style="display: none;"></a>
+
+<span class="fright">
+    <a href="https://www.douban.com/about">关于豆瓣</a>
+    · <a href="https://www.douban.com/jobs">在豆瓣工作</a>
+    · <a href="https://www.douban.com/about?topic=contactus">联系我们</a>
+    · <a href="https://www.douban.com/about?policy=disclaimer">免责声明</a>
+    
+    · <a href="https://help.douban.com/?app=movie" target="_blank">帮助中心</a>
+    · <a href="https://www.douban.com/doubanapp/">移动应用</a>
+    · <a href="https://www.douban.com/partner/">豆瓣广告</a>
+</span>
+
+    </div>
+
+    </div>
+    <script type="text/javascript" src="style/10eb2aa86a2979b4.js"></script>
+        
+        
+    <link rel="stylesheet" type="text/css" href="style/base/dialog.css" />
+    <link rel="stylesheet" type="text/css" href="style/base/reg_login_pop.css" />
+    <script type="text/javascript" src="style/do.js" data-cfg-autoload="false"></script>
+    <script type="text/javascript" src="style/dialog.js"></script>
+    <script type="text/javascript">
+        var HTTPS_DB='https://www.douban.com';
+var account_pop={open:function(e,b){if(b){referrer="?referrer="+encodeURIComponent(b)}else{referrer="?referrer="+window.location.href}var f="",a="",i=382;if(e==="reg"){f="用户注册";a="https://accounts.douban.com/popup/login?source=movie#popup_register";i=480}else{if(e==="login"){f="用户登录";a="https://accounts.douban.com/popup/login?source=movie"}}var h=document.location.protocol+"//"+document.location.hostname;var d=dui.Dialog({width:478,title:f,height:i,cls:"account_pop",isHideTitle:true,modal:true,content:"<iframe scrolling='no' frameborder='0' width='478' height='"+i+"' src='"+a+"' name='"+h+"'></iframe>"},true),c=d.node;c.undelegate();c.delegate(".dui-dialog-close","click",function(){var j=$("body");j.find("#login_msk").hide();j.find(".account_pop").remove()});if($(window).width()<478){var g="";if(e==="reg"){g=HTTPS_DB+"/accounts/register"+referrer}else{if(e==="login"){g=HTTPS_DB+"/accounts/login"+referrer}}window.location.href=g}else{d.open()}$(window).bind("message",function(j){if(j.originalEvent.origin==="https://accounts.douban.com"){c.find("iframe").css("height",j.originalEvent.data);c.height(j.originalEvent.data);d.update()}})}};if(Douban&&Douban.init_show_login){Douban.init_show_login=function(b){var a=$(b);a.click(function(){var c=a.data("ref")||"";account_pop.open("login",c);return false})}}Do(function(){$("body").delegate(".pop_register","click",function(b){b.preventDefault();var a=$(this).data("ref")||"";account_pop.open("reg",a);return false});$("body").delegate(".pop_login","click",function(b){b.preventDefault();var a=$(this).data("ref")||"";account_pop.open("login",a);return false})});
+    </script>
+
+    
+    <!-- douban ad begin -->
+    
+    
+
+
+
+
+    
+<script type="text/javascript">
+    (function (global) {
+        var newNode = global.document.createElement('script'),
+            existingNode = global.document.getElementsByTagName('script')[0],
+            adSource = '//erebor.douban.com/',
+            userId = '',
+            browserId = '7zpr8m+ZWX8',
+            criteria = '3:/',
+            preview = '',
+            debug = false,
+            adSlots = ['dale_movie_homepage_top_large', 'dale_movie_home_top_right', 'dale_movie_home_top_right_ford', 'dale_movie_home_top_right2', 'dale_movie_home_side_top', 'dale_movie_home_main_top', 'dale_movie_home_bottom_right', 'dale_movie_homepage_bottom', 'movie_home_left_bottom', 'dale_movie_home_bottom_right_down'];
+
+        global.DoubanAdRequest = {src: adSource, uid: userId, bid: browserId, crtr: criteria, prv: preview, debug: debug};
+        global.DoubanAdSlots = (global.DoubanAdSlots || []).concat(adSlots);
+
+        newNode.setAttribute('type', 'text/javascript');
+        newNode.setAttribute('src', 'https://img3.doubanio.com/f/shire/0a3e8bdd48446950d821b65613a24e86be2b067a/js/ad.js');
+        newNode.setAttribute('async', true);
+        existingNode.parentNode.insertBefore(newNode, existingNode);
+    })(this);
+</script>
+
+
+
+
+
+
+
+
+
+
+    <!-- douban ad end -->
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+var _paq = _paq || [];
+_paq.push(['trackPageView']);
+_paq.push(['enableLinkTracking']);
+(function() {
+    var p=(('https:' == document.location.protocol) ? 'https' : 'http'), u=p+'://fundin.douban.com/';
+    _paq.push(['setTrackerUrl', u+'piwik']);
+    _paq.push(['setSiteId', '100001']);
+    var d=document, g=d.createElement('script'), s=d.getElementsByTagName('script')[0];
+    g.type='text/javascript';
+    g.defer=true;
+    g.async=true;
+    g.src=p+'://img3.doubanio.com/dae/fundin/piwik.js';
+    s.parentNode.insertBefore(g,s);
+})();
+</script>
+
+<script type="text/javascript">
+var setMethodWithNs = function(namespace) {
+  var ns = namespace ? namespace + '.' : ''
+    , fn = function(string) {
+        if(!ns) {return string}
+        return ns + string
+      }
+  return fn
+}
+
+var gaWithNamespace = function(fn, namespace) {
+  var method = setMethodWithNs(namespace)
+  fn.call(this, method)
+}
+
+var _gaq = _gaq || []
+  , accounts = [
+      { id: 'UA-7019765-1', namespace: 'douban' }
+    , { id: 'UA-7019765-19', namespace: '' }
+    ]
+  , gaInit = function(account) {
+      gaWithNamespace(function(method) {
+        gaInitFn.call(this, method, account)
+      }, account.namespace)
+    }
+  , gaInitFn = function(method, account) {
+      _gaq.push([method('_setAccount'), account.id]);
+      _gaq.push([method('_setSampleRate'), '60']);
+
+      
+  _gaq.push([method('_addOrganic'), 'google', 'q'])
+  _gaq.push([method('_addOrganic'), 'baidu', 'wd'])
+  _gaq.push([method('_addOrganic'), 'soso', 'w'])
+  _gaq.push([method('_addOrganic'), 'youdao', 'q'])
+  _gaq.push([method('_addOrganic'), 'so.360.cn', 'q'])
+  _gaq.push([method('_addOrganic'), 'sogou', 'query'])
+  if (account.namespace) {
+    _gaq.push([method('_addIgnoredOrganic'), '豆瓣'])
+    _gaq.push([method('_addIgnoredOrganic'), 'douban'])
+    _gaq.push([method('_addIgnoredOrganic'), '豆瓣网'])
+    _gaq.push([method('_addIgnoredOrganic'), 'www.douban.com'])
+  }
+
+      if (account.namespace === 'douban') {
+        _gaq.push([method('_setDomainName'), '.douban.com'])
+      }
+
+        _gaq.push([method('_setCustomVar'), 1, 'responsive_view_mode', 'desktop', 3])
+
+        _gaq.push([method('_setCustomVar'), 2, 'login_status', '0', 2]);
+
+      _gaq.push([method('_trackPageview')])
+    }
+
+for(var i = 0, l = accounts.length; i < l; i++) {
+  var account = accounts[i]
+  gaInit(account)
+}
+
+
+;(function() {
+    var ga = document.createElement('script');
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    ga.setAttribute('async', 'true');
+    document.documentElement.firstChild.appendChild(ga);
+})()
+</script>
+
+
+
+
+
+
+
+
+    <!-- sindar7a-docker-->
+
+  <script>_SPLITTEST=''</script>
+
+<script>var _check_hijack = function () {
+    var _sig = "7zpr8m+Z", _login = false, bid = get_cookie('bid');
+    if (location.protocol != "file:" && (
+            typeof(bid) != "string" && _login ||
+            typeof(bid) == "string" && bid.substring(0,8) != _sig)) {
+        location.href += (/\?/.test(location.href)?"&":"?") + (
+                "_r=" + Math.random().toString(16).substring(2));
+    }};
+if (typeof(Do) != 'undefined') Do(_check_hijack);
+else if (typeof(get_cookie) != 'undefined') _check_hijack();
+</script></body>
+
+</html>
+

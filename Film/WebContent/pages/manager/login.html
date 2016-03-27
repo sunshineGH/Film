@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<meta name="description" content="Sentir, Responsive admin and dashboard UI kits template">
+		<meta name="keywords" content="admin,bootstrap,template,responsive admin,dashboard template,web apps template">
+		<meta name="author" content="">
+		<title>Login | SENTIR - Responsive admin and dashboard UI kits template</title>
+		<link href="../../css/bootstrap.min.css" rel="stylesheet">
+		<link href="../../css/font-awesome.css" rel="stylesheet">
+		<link href="../../css/style.css" rel="stylesheet">
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+		<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+		<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+		<![endif]-->
+	</head>
+	<body class="login tooltips">
+		<div class="login-header text-center">
+			<img src="images/logo-login.png" class="logo" alt="Logo">
+		</div>
+		<div class="login-wrapper">
+			<form role="form" action="../../InfoCl?method=login&isadmin=1" id="loginForm">
+				<div class="form-group has-feedback lg left-feedback no-label">
+				  <input type="text" class="form-control no-border input-lg rounded" placeholder="Enter username" name="id" id="id" autofocus>
+				  <span class="fa fa-user form-control-feedback"></span>
+				</div>
+				<div class="form-group has-feedback lg left-feedback no-label">
+				  <input type="password" class="form-control no-border input-lg rounded" placeholder="Enter password" name="password" id="password">
+				  <input style="display:none" type="text" class="form-control no-border input-lg rounded"  name="isadmin" value="1" id="isadmin">
+				  <input style="display:none" type="text" class="form-control no-border input-lg rounded"  name="method" value="login" id="method">
+				  <span class="fa fa-unlock-alt form-control-feedback"></span>
+				</div>
+				<!-- <div class="form-group">
+				  <div class="checkbox">
+					<label>
+					  <input type="checkbox" class="i-yellow-flat"> Remember me
+					</label>
+				  </div>
+				</div> -->
+				<div class="form-group">
+					<button type="submit" class="btn btn-warning btn-lg btn-perspective btn-block" >LOGIN</button>
+				</div>
+			</form>
+		</div>
+		<script src="../../js/jquery.min.js"></script>
+		<script src="../../js/bootstrap.min.js"></script>
+	</body>
+</html>
+<script type="text/javascript">
+	(function($) {
+		$.extend({       
+		urlGet:function()
+		{
+		  var aQuery = window.location.href.split("?");  //取得Get参数
+		  var aGET = new Array();
+		  if(aQuery.length > 1)
+		  {
+		    var aBuf = aQuery[1].split("&");
+		    for(var i=0, iLoop = aBuf.length; i<iLoop; i++)
+		    {
+		      var aTmp = aBuf[i].split("=");  //分离key与Value
+		      aGET[aTmp[0]] = aTmp[1];
+		    }
+		  }
+		  return aGET;
+		 }
+		});
+		$("#id").blur(function(){
+			/* $(this).value = $(this).value.replace(/\s/gi,''); */
+			$(this).val($.trim($(this).val()));
+		});
+		/* var repalceSpace = function(obj) {
+			obj.value = obj.value.replace(/\s/gi,'')
+		} */
+	})(jQuery)
+	$(document).ready(function(){
+		var GET = $.urlGet();
+		var error = GET['error'];
+		if(error == "0"){
+			alert("查无此人！");
+		}else if(error == "2"){
+			alert("密码错误！");
+		}
+	});
+	
+</script>

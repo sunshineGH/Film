@@ -1,0 +1,151 @@
+<div class="swiper-block">
+ <div class="swiper-container">
+ 	<div class="swiper-wrapper">
+ 		<div class="swiper-slide">Slide 1</div>
+ 		<div class="swiper-slide">Slide 2</div>
+ 		<div class="swiper-slide">Slide 3</div>
+ 		<div class="swiper-slide">Slide 4</div> 
+ 	</div>
+ 	<div class="swiper-pagination"></div>
+ </div>
+</div>
+<div class="swiper-box">
+	<div class="slide-block">
+		<div class="swiper-container2">
+	 		<div class="swiper-wrapper">
+		  		<div class="swiper-slide"></div>
+		  		<div class="swiper-slide">Slide 2</div>
+		  		<div class="swiper-slide">Slide 3</div>
+		  		<div class="swiper-slide">Slide 4</div>
+		  		<div class="swiper-slide">Slide 5</div>
+		  		<div class="swiper-slide">Slide 6</div>
+	  		</div>
+		  	<div class="swiper-button-prev"></div>
+		  	<div class="swiper-button-next"></div>
+  		</div>
+	</div>
+</div>
+
+<div class="middle-box box">
+	<div class="middle-left-box">
+ 	<p class="theme-color">选电影</p>
+ 	<div class="hot-content">
+ 		<ul class="categoryUL">
+ 			<li class="category" ng-repeat="category in categorys" ng-click="selectCategory(category.id,$index)" ng-class="{'active':$index==selectedRow}">{{category.name}}</li>
+ 		</ul>
+ 		<div class="tool">
+ 			<div class="sort">
+ 				<label><input type="radio" name="sort" value="" ng-checked="true" ng-model="sortName" ng-change="listFilmSorted()">默认排序</label>
+ 			</div>
+ 			<div class="sort">
+ 				<label><input type="radio" name="sort" value="hot" ng-model="sortName" ng-change="listFilmSorted()">按热度排序</label>
+ 			</div>
+ 			<div class="sort">
+ 				<label><input type="radio" name="sort" value="grade" ng-model="sortName" ng-change="listFilmSorted()">按分数排序</label>
+ 			</div>
+ 			<div class="sort">
+ 				<label><input type="radio" name="sort" value="time" ng-model="sortName" ng-change="listFilmSorted()">按时间排序</label>
+ 			</div>
+ 		</div>
+ 		<div class="list-wp">
+ 		<!-- 浮动框 -->
+ 	<div class="detail-pop" style="top: {{top}}px; left: {{left}}px;" ng-show="isDetailShow">
+ 		<div class="wp">
+       			<div class="info">
+          				 <h3><a target="_blank" href="http://movie.douban.com/subject/3543318/?tag=热门&amp;from=gaia">{{film.name}}</a></h3>
+           			 <p class="rank">        
+                   		<span class="ll bigstar30"></span>&nbsp;&nbsp;
+                   		<strong>5.6</strong>     
+           			 </p>
+           		     <p class="meta">
+                   		<span>{{film.time}}分钟</span>                   
+                     <span ng-repeat="class in classes">{{class}}</span> 
+                     <!-- <span>爱情</span>                       
+                     <span>恐怖</span> -->
+                     <span>{{film.director}}(导演)</span>
+          				 </p>
+           			<!--  <p class="collect-area">  
+                   		<a href="javascript:;" rel="nofollow" class="j a_collect_btn" name="sbtn-3543318-wish">想看</a>                        
+                           <a href="javascript:;" rel="nofollow" class="j a_collect_btn" name="sbtn-3543318-collect">看过</a>
+                        </p> -->
+                  </div>
+                  <p class="comment">
+       			       简奥斯丁真的要从坟墓里爬出来了！！！现在真是女汉子的时代，最后的美人救英雄，哈哈。<span>- iriselite的短评</span>
+      			   </p>
+       
+   		 	</div>
+   		 </div>
+   		 
+   		 
+			<div class="list">
+				<a class="item"  href="#/filmDetail/{{film.id}}" ng-repeat="film in films" ng-mouseenter="mouseenter(film.id,$index)" ng-mouseleave="mouseleave(film.id)">
+					<div class="cover-wp">
+						<img ng-src="http://localhost:8080/Film/{{film.picture}}" alt="film.name" style="height:100%;opacity:1;">
+					</div>
+					<p>{{film.name}}<strong>{{film.gradecount}}</strong></p>
+				</a>
+			</div>
+		</div>
+	</div>
+	
+	
+	
+	
+	<div>
+		<p class="hasborder">最受欢迎的影评
+			<span><a>更多热门影评»</a></span>
+		</p>
+		<div class="review" ng-repeat="comment in comments">
+			<div class="review-hd">
+				<a href="">
+					<img class="lazy" ng-src="http://localhost:8080/Film/{{comment.picture}}" alt="{{comment.filename}}">
+				</a>
+			</div>
+			<div class="review-bd">
+				<h5><a href="">{{comment.subject}}</a></h5>
+				<div class="review-meta">
+					<a href=""> {{comment.username}}</a> 评论
+					<a href="">{{comment.filmname}}</a>
+					<span class="allstar30"></span>
+				</div>
+				<div class="review-content">
+					评论内容{{comment.comment}}
+					<a href="">(全文)</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<div class="middle-right-box">
+	<div class="hot_link">
+		 <p class="activity"> 电影活动 &nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;·&nbsp;· </p>
+		 <ul>
+    			 <li>
+        			 <a href="https://movie.douban.com/doubanfilmawards/nominees_6th/result/?source=movie_home_activity" data-bid="2143" target="_blank">
+            			 第六届豆瓣电影鑫像奖【完整获奖名单】
+         			 </a>
+    		     </li>
+    			 <li>
+         			<a href="https://site.douban.com/movieclub/widget/notes/190220334/note/547085633/" data-bid="1128" target="_blank">
+           			  资讯 |《蝙蝠侠大战超人》曝双特辑
+        			 </a>
+    			 </li>
+		 </ul>
+</div>
+<div id="billboard" class="s" data-dstat-areaid="75" data-dstat-mode="click,expose">
+     <div class="billboard-hd">
+         <p>本周口碑榜<span><a href="/chart">更多榜单»</a></span></p>
+     </div>
+     <div class="billboard-bd">
+         <table>
+                <tbody>
+                 <tr ng-repeat="filmByComment in filmsByComment">
+                     <td class="order">{{$index+1}}</td>
+                     <td class="title"><a  href="">{{filmByComment.name}}</a></td>
+                 </tr>
+         		</tbody>
+         	</table>
+      </div>
+		</div>
+	</div>
+</div>
