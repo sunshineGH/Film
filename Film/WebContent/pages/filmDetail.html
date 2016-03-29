@@ -1,3 +1,39 @@
+<div id="header-wrap" class="header-wrap">
+		<div id="header-fix" class="header-fix">
+			<span><a>爱豆</a></span>
+			<span><a>电影</a></span>
+			<span><a>优惠券</a></span>
+			<span><a>读书</a></span>
+		</div>
+	</div>
+	<div class="content-wrap" id="content-wrap">
+		<div class="sub-title box">
+			<div class="logo-header">
+				<h3>爱豆电影</h3>
+		    </div>
+		    <div class="subnav">
+		    	<div class="subsubnav">
+		    		<div class="subnav-left">
+		    			<span class="btn-right"><a href="index.html">首页</a></span>
+		    		</div>
+		    		<div class="col-lg-offset-1 col-lg-8">
+		    			<span class="selected"><a href="">电影部落</a></span>
+				    	<em> | </em>
+				    	<span><a href="">观影分享</a></span>
+				    	<em> | </em>
+				    	<span><a href="register.html">加入我们</a></span>
+				    	<em> | </em>
+				    	<span><a href="">电影之家</a></span>
+				    	<em> | </em>
+				    	<span><a href="#/pay">充值缴费</a></span>
+				    </div>
+				    	<span class="selected btn-right" ng-show="isLoginShow"><a href="#/login">请登录</a></span>
+				    	<span class="selected btn-right" ng-hide="isLoginShow"><a href="#/userInfo/">{{userid}}</a></span>
+				    	<em> | </em>
+				    	<span class="btn-right"><a href="#/register">免费注册</a></span>
+		    	</div>	    	
+	    	</div>
+	    </div>
 <div class="middle-box box">
 	<h2 class="filmname">{{film.name}}<span></span></h2>
 	<div class="middle-left-box">
@@ -45,7 +81,7 @@
 		</div>
 		<div id="comments-section">
         	<div class="mod-hd">  
-        		<a class="comment_btn j a_show_login" href="" rel="nofollow"><span>我来说两句</span></a>
+        		<a class="comment_btn j a_show_login" href="#/addComment/{{film.id}}" ><span>我来说两句</span></a>
     			<h2 class="intro"> <i class="">{{film.name}}的短评</i>· · · · · ·
             		<span class="p1">(<a href="">全部{{film.comment}}条</a>) </span>
 				</h2>
@@ -65,9 +101,16 @@
 			                			<span>{{filmComment.username}}</span>
 			                    		<span class="allstar30 rating" title="还行"></span>
 			                			<span class="">{{filmComment.time}}</span>
+			                			<span>评分：{{filmComment.grade}}</span>
+			                			<a style="float:right;color:#37a;text-decoration:none;" href="#/allCommnetReply/{{filmComment.id}}">全部回复</a>
 			           				 </span>
 			       			    </h3>
-		        				<p class="commentContent"> {{filmComment.comment}} </p>
+			       		
+		        				<p class="commentContent"> {{filmComment.comment}}
+		        				 
+		        				 <a style="float:right;color:#37a;text-decoration:none;" href="#/commnetReply/{{filmComment.id}}">回复</a>
+		        			    </p>
+		        				
 		    				</div>
 	       				 </div>           
                 		&gt; <a href="" class="more">更多短评{{}}条</a>
@@ -76,4 +119,5 @@
         </div>
     </div>
 	</div>
+</div>
 </div>

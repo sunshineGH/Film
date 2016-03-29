@@ -1,3 +1,40 @@
+<div id="header-wrap" class="header-wrap">
+		<div id="header-fix" class="header-fix">
+			<span><a>爱豆</a></span>
+			<span><a>电影</a></span>
+			<span><a>优惠券</a></span>
+			<span><a>读书</a></span>
+		</div>
+	</div>
+	<div class="content-wrap" id="content-wrap">
+		<div class="sub-title box">
+			<div class="logo-header">
+				<h3>爱豆电影</h3>
+		    </div>
+		    <div class="subnav">
+		    	<div class="subsubnav">
+		    		<div class="subnav-left">
+		    			<span class="btn-right"><a href="index.html">首页</a></span>
+		    		</div>
+		    		<div class="col-lg-offset-1 col-lg-8">
+		    			<span class="selected"><a href="">电影部落</a></span>
+				    	<em> | </em>
+				    	<span><a href="">观影分享</a></span>
+				    	<em> | </em>
+				    	<span><a href="register.html">加入我们</a></span>
+				    	<em> | </em>
+				    	<span><a href="">电影之家</a></span>
+				    	<em> | </em>
+				    	<span><a href="#/pay">充值缴费</a></span>
+				    </div>
+				    	<span class="selected btn-right" ng-show="isLoginShow"><a href="#/login">请登录</a></span>
+				    	<span class="selected btn-right" ng-hide="isLoginShow"><a href="#/userInfo">{{userid}}</a></span>
+				    	<em> | </em>
+				    	<span class="btn-right"><a href="#/register">免费注册</a></span>
+				    	<span class="btn-right"><a ng-click="logout()">退出</a></span>
+		    	</div>	    	
+	    	</div>
+	    </div>
 <div class="swiper-block">
  <div class="swiper-container">
  	<div class="swiper-wrapper">
@@ -141,7 +178,7 @@
                 <tbody>
                  <tr ng-repeat="filmByComment in filmsByComment">
                      <td class="order">{{$index+1}}</td>
-                     <td class="title"><a  href="">{{filmByComment.name}}</a></td>
+                     <td class="title"><a  href="#/filmDetail/{{filmByComment.id}}">{{filmByComment.name}}</a></td>
                  </tr>
          		</tbody>
          	</table>
@@ -149,3 +186,7 @@
 		</div>
 	</div>
 </div>
+</div>
+
+
+

@@ -3,17 +3,20 @@
 <head>
 	<meta charset="utf-8">
 	<title>爱豆电影</title>
-	<link rel="stylesheet" type="text/css" href="http://cdn.bootcss.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="../css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="style/base/style.css">
 	<link rel="stylesheet" type="text/css" href="style/base/swiper-3.2.7.min.css">
 	<script src="../js/angular.js"></script>
 	<script src="../js/angular-route.js"></script>
 	<script src="style/jquery-1.9.1.min.js"></script>
 	<script src="style/swiper-3.2.7.jquery.min.js"></script>
+	<script src="../js/layer-v2.1/layer/layer.js"></script>
+	<script src="style/cookie.js"></script>
+	<script src="../js/angular-cookies.js"></script>
 	<script src="style/script.js"></script>
 </head>
 <body class="detail-body">
-	<div id="header-wrap" class="header-wrap">
+	<!-- <div id="header-wrap" class="header-wrap">
 		<div id="header-fix" class="header-fix">
 			<span><a>爱豆</a></span>
 			<span><a>电影</a></span>
@@ -43,13 +46,13 @@
 				    	<em> | </em>
 				    	<span><a href="">电影推荐</a></span>
 				    </div>
-				    	<span class="selected btn-right"><a href="login.html">请登录</a></span>
+				    	<span class="selected btn-right"><a href="#/login">请登录</a></span>
 				    	<em> | </em>
 				    	<span class="btn-right"><a href="register-both.html">免费注册</a></span>
 		    	</div>	    	
 	    	</div>
-	    </div>
-	    <!-- <div class="swiper-block" ng-show="isShowSwiper">
+	    </div> -->
+	     <!-- <div class="swiper-block" >
 			 <div class="swiper-container">
 			 	<div class="swiper-wrapper">
 			 		<div class="swiper-slide">Slide 1</div>
@@ -60,7 +63,7 @@
 			 	<div class="swiper-pagination"></div>
 			 </div>
 		</div>
-		<div class="swiper-box" ng-show="isShowSwiper">
+		<div class="swiper-box">
 			<div class="slide-block">
 				<div class="swiper-container2">
 		 		<div class="swiper-wrapper">
@@ -75,35 +78,15 @@
 			  	<div class="swiper-button-next"></div>
 		  		</div>
 			</div>
-		</div> -->
+		</div>  -->
 	    <div ng-view> </div>
 	</div>
 </body>
-</html>
 
 <script type="text/javascript">
-	$(function() {
-		var mySwiper = new Swiper('.swiper-container',{
-			direction:'horizontal',
-			loop:true,
-			pagination:'.swiper-pagination',
-			paginationClickable:true,
-			watchSlidesProgess:true,
-			watchSlidesVisibility:true,
-			autoplay:3000
-		});
-		var mySwiper2 = new Swiper('.swiper-container2',{
-			/*direction:'horizontal',*/
-			loop:false,
-			slidesPerView: 4,
-        	spaceBetween: 5,
-        	prevButton:'.swiper-button-prev',
-        	nextButton:'.swiper-button-next',
-        	autoplay:5000
-		});
+$(function() {
+	console.log("进入该方法");
 		
-	    /* $('li.category').bind("click",function() {
-			$(this).addClass('active');
-		});  */
-	})
+})
 </script>
+</html>

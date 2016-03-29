@@ -1,0 +1,69 @@
+<div id="header-wrap" class="header-wrap">
+	<div id="header-fix" class="header-fix">
+		<span><a>爱豆</a></span>
+		<span><a>电影</a></span>
+		<span><a>优惠券</a></span>
+		<span><a>读书</a></span>
+	</div>
+</div>
+<div class="content-wrap" id="content-wrap">
+	<div class="sub-title box">
+		<div class="logo-header">
+			<h3>爱豆电影</h3>
+	    </div>
+	    <div class="subnav">
+	    	<div class="subsubnav">
+	    		<div class="subnav-left">
+	    			<span class="btn-right"><a href="index.html">首页</a></span>
+	    		</div>
+	    		<div class="col-lg-offset-1 col-lg-8">
+	    			<span class="selected"><a href="">电影部落</a></span>
+			    	<em> | </em>
+			    	<span><a href="">观影分享</a></span>
+			    	<em> | </em>
+			    	<span><a href="register.html">加入我们</a></span>
+			    	<em> | </em>
+			    	<span><a href="">电影之家</a></span>
+			    	<em> | </em>
+			    	<span><a href="#/pay">充值缴费</a></span>
+			    </div>
+			    	<span class="selected btn-right" ng-show="isLoginShow"><a href="#/login">请登录</a></span>
+				    <span class="selected btn-right" ng-hide="isLoginShow"><a href="#/userInfo">{{userid}}</a></span>
+			    	<em> | </em>
+			    	<span class="btn-right"><a href="#/register">免费注册</a></span>
+	    	</div>	    	
+	   	</div>
+	 </div>
+	 <div class="middle-box box">
+	 	<h2 class="filmname">评论回复<span></span></h2>
+	 	<form  class="form-horizontal">
+	 		<fieldset class="xianxia">
+	 		<div class="form-group"> 
+				<label class="col-lg-2 control-label">评论人：</label>
+				<div class="col-lg-5">
+					<p>{{comment.username}}</p>
+				</div>
+			</div>
+	 		<div class="form-group"> 
+				<label class="col-lg-2 control-label">评论正文：</label>
+				<div class="col-lg-5">
+					<p>{{comment.comment}}</p>
+				</div>
+			</div>
+			<div class="form-group"> 
+				<label class="col-lg-2 control-label">回复：</label>
+				<div class="col-lg-5">
+					<textarea class="form-control" name="filmintro" ng-model="comment.reply" rows="8" cols="80" required></textarea>
+				</div>
+			</div>
+			<div class="form-group">
+				<div class="col-lg-4 col-lg-offset-4">
+					<button type="submit" class="btn btn-primary" ng-click="addReply(comment.id)">提交</button>
+					<!-- <button type="button" class="btn btn-danger" ng-click="deleteUser()">删除</button> -->
+				</div>
+			</div>
+			</fieldset>
+	 	</form>
+ 	 </div>
+</div>
+ 

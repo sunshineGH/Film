@@ -7,7 +7,7 @@
     <meta name="referrer" content="unsafe-url">
     
     <title>
-欢迎加入豆瓣
+欢迎加入爱豆
 </title>
     
 
@@ -27,7 +27,7 @@ label { display: inline-block; float:left; margin-right: 15px; text-align: right
 p.agreement { margin-left: 75px; }
 .agreement-label { display: inline; width: auto; text-align: left; float: none }
 .box { margin-left: 75px }
-.basic-input { width: 200px; padding: 5px; height: 18px; font-size: 14px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; border: 1px solid #c9c9c9 }
+.basic-input { width: 200px; padding: 5px; height: 30px; font-size: 14px; -moz-border-radius: 3px; -webkit-border-radius: 3px; border-radius: 3px; border: 1px solid #c9c9c9 }
 .item .basic-input:focus { border: 1px solid #a9a9a9 }
 .validate-option { display: none; color: #808080 }
 .validate-error { display: none; color: #fe2617 }
@@ -97,76 +97,38 @@ Do.add('validate', {path: '../style/base/validate.js', type: 'js'});
   <div class="wrapper">
     
 <h1>
-欢迎加入豆瓣
+欢迎加入爱豆
 </h1>
 
     <div class="article">
       
     
-    <form name="lzform" method="post" action="https://accounts.douban.com/register">
-        <div style="display:none;">
-            <input type="hidden" name="source" value="movie"/>
-            <input type="hidden" name="redir" value="  "/>
-            <img src="https://www.douban.com/pics/blank.gif" onerror="document.lzform.action='https://accounts.douban.com/register'"/>
-        </div>
+    <form name="lzform">
         <div class="item extra-tips">
-            <label>邮箱</label>
-            <input id="email" name="alias" type="text" class="basic-input" maxlength="60" tabindex="1" value=""/>
-        </div>
-        <div class="suggestion">
-            <div id="email_suggestion"></div>
+            <label>账号</label>
+            <input id="id" name="alias" type="text" class="basic-input" maxlength="60"  ng-model="user.id" ng-change="errorHide()" ng-blur="isSaveUser(user.id)"/>
+            <span ng-show="isShow" style="color:red">账号已存在</span>
         </div>
         <div class="item extra-tips">
             <label>密码</label>
-            <input id="password" name="password" type="password" class="basic-input" tabindex="2" maxlength="20"/>
+            <input id="password" name="password" type="password" class="basic-input"  maxlength="20" ng-model="user.psw"/>
         </div>
         <div class="item extra-tips">
-            <label>名号</label>
-            <input id="name" name="name" type="text"
-            class="basic-input" maxlength="15" tabindex="3" value=""/>
+            <label>姓名</label>
+            <input id="id" name="alias" type="text" class="basic-input" maxlength="60"  ng-model="user.name"/>
         </div>
-        <div class="suggestion">
-            <span class="tips">第一印象很重要，起个响亮的名号吧</span>
+         <div class="item">
+            <label>性别</label>
+            <label><input type="radio" name="sex" value="男" ng-model="user.sex">男</label>
+            <label><input type="radio" name="sex" value="女" ng-model="user.sex">女</label>
         </div>
-
-            <div class="item loc-item">
-                <label>常居地</label>
-                <span class="loc">
-                <em id="location">豆瓣猜你在<strong>北京</strong>，没猜对？</em> <a href="#" class="a-btn-location" id="edloc">手动选择</a>
-                </span>
-                
-                <input type="hidden" name="loc" value="108288"/>
-            </div>
-
-
         <div class="item">
             <label>手机号</label>
-            <input id="verify_phone" name="verify_phone" type="text" class="basic-input" maxlength="60" value="" tabindex="1"/>
-        </div>
-        <div class="suggestion">
-            <span class="tips">用手机接收注册验证码</span>
-        </div>
-        <div class="item captcha-item">
-            <label>验证码</label>
-            <input id="code" name="code" type="text" class="basic-input small" maxlength="10" tabindex="2"/>
-            <input id="request-phone-code-btn" type="submit" value="获取验证码"/>
-            <span id="tips-error" class="tips"><em></em></span>
-            <span id="tips-info" class="tips"></span>
-            <span class="validate-error" id="frm_error"></span>
-        </div>
-
-        <div class="item">
-          <p class="agreement">
-            <label for="agreement" class="agreement-label">
-              <input type="checkbox" id="agreement" name="agreement" tabindex="5"
-                />
-              我已经认真阅读并同意豆瓣的《<a target="_blank" href="/about?policy=agreement">使用协议</a>》。
-            </label>
-          </p>
+            <input id="verify_phone" name="verify_phone" type="text" class="basic-input" maxlength="60" ng-model="user.phone" tabindex="1"/>
         </div>
         <div class="item-submit">
             <label>&nbsp;</label>
-            <input type="submit" name="register" value="注册" disabled="disabled" id="button" class="btn-submit disabled" tabindex="6" title="阅读并同意豆瓣的《使用协议》方可注册。"/>
+            <button type="submit" class="btn btn-success" ng-click="register(user)">注册</button>
         </div>
     </form>
 
@@ -174,8 +136,7 @@ Do.add('validate', {path: '../style/base/validate.js', type: 'js'});
     <div class="aside">
       
 <ul class="sidenav">
-  <li>&gt;&nbsp;已经拥有豆瓣帐号? <a rel="nofollow" href="/login">直接登录</a></li>
-  <li>&gt;&nbsp;<a href="https://www.douban.com/mobile/">点击下载豆瓣移动应用</a></li>
+  <li>&gt;&nbsp;已经拥有爱豆帐号? <a rel="nofollow" href="/login">直接登录</a></li>
 
 </ul>
 
@@ -192,15 +153,15 @@ Do.add('validate', {path: '../style/base/validate.js', type: 'js'});
 </span>
 
 <span class="fright">
-    <a href="https://www.douban.com/about">关于爱豆</a>
-    · <a href="https://www.douban.com/jobs">在爱豆工作</a>
-    · <a href="https://www.douban.com/about?topic=contactus">联系我们</a>
-    · <a href="https://www.douban.com/about?policy=disclaimer">免责声明</a>
+    <a href="https://www.aidou.com/about">关于爱豆</a>
+    · <a href="https://www.aidou.com/jobs">在爱豆工作</a>
+    · <a href="https://www.aidou.com/about?topic=contactus">联系我们</a>
+    · <a href="https://www.aidou.com/about?policy=disclaimer">免责声明</a>
     
-    · <a href="https://www.douban.com/help/">帮助中心</a>
-    · <a href="https://developers.douban.com/" target="_blank">开发者</a>
-    · <a href="https://www.douban.com/mobile/">移动应用</a>
-    · <a href="https://www.douban.com/partner/">爱豆广告</a>
+    · <a href="https://www.aidou.com/help/">帮助中心</a>
+    · <a href="https://developers.aidou.com/" target="_blank">开发者</a>
+    · <a href="https://www.aidou.com/mobile/">移动应用</a>
+    · <a href="https://www.aidou.com/partner/">爱豆广告</a>
 </span>
 
 
@@ -211,386 +172,6 @@ Do.add('validate', {path: '../style/base/validate.js', type: 'js'});
     </div>
     <!-- main -->
     <!-- COLLECTED JS -->
-    
-<script>
-
-
-Do('dialog', function(){
-
-    (function(){var e,g,f,c,b="captcha_dialog",a="/accounts/j/misc/reg_captcha";function h(){$.getJSON(a,function(j){f.attr("src",j.url);g.val(j.token)});captcha_solution_el.val("")}function d(){if(e!==undefined){e.updateSize();e.updatePosition()}}function i(k,j){if(e!==undefined){e.open();h();captcha_solution_el.val("");captcha_solution_el.focus();return}e=dui.Dialog({title:"请输入下图中的文字或字母",url:a,nodeId:b,modal:true,width:340,cache:false,dataType:"json",buttons:[{cls:"confirm-btn",text:"确定",method:function(){var m=g.val().trim(),l=captcha_solution_el.val().trim();if(l){e.close();k(m,l)}}}],callback:function(){$.getJSON(a,function(l){e.setContent('                        <div class="captcha-item">                            <input type="hidden" value="'+l.token+'" name="captcha-id">                            <img src="'+l.url+'" class="captcha-img"/>                             <input type="text" name="captcha-solution" class="basic-input captcha" id="captcha" maxlength="10"/>                        </div>');g=e.node.find("input[name='captcha-id']");f=e.node.find("img.captcha-img");captcha_solution_el=e.node.find("input[name='captcha-solution']");c=e.node.find(".confirm-btn input");f.one("load",function(){d()}).each(function(){if(this.complete){$(this).load()}});captcha_solution_el.keypress(function(m){if(m.which==13){m.preventDefault();c.click()}});f.click(h);d();captcha_solution_el.focus()});e.btnClose.click(function(){if(j!==undefined){j()}})}},true);e.open()}window.show_captcha_dialog=i})();
-
-    var need_captcha_test = true;
-
-    $('#request-phone-code-btn').click(function(e) {
-        e.preventDefault();
-        request_phone_code();
-    });
-
-
-    function request_phone_code(captcha_id, captcha_solution){
-        $('#tips-error em').text('')
-        var i = 60, num = $.trim($("#verify_phone").val());
-        if(num === "" || num.length != 11) {
-            displayError($("#verify_phone")[0], "请输入正确手机号");
-            return;
-        }
-        var data = { phone: num},
-            el = $('#request-phone-code-btn');;
-        if (need_captcha_test){
-            if (captcha_id === undefined) {
-                setTimeout(function() {show_captcha_dialog(request_phone_code, function(){
-                    $('#tips-info').text('');
-                });}, 0)
-                return
-            } else {
-                data.captcha_id = captcha_id;
-                data.captcha_solution = captcha_solution;
-            }
-        }
-        $('#tips-info').text('请稍等...');
-        $.post('/accounts/j/register/send_register_verify_code', data, function(result) {
-            if (result.r === 0) {
-                el.attr('disabled', 'disabled');
-                var timer = setInterval(function () {
-                    el.val('重新获取' + ' (' + --i + ')');
-                    if (!i) {
-                        clearInterval(timer);
-                        el.removeAttr("disabled").val('获取验证码');
-                    }
-                }, 1000);
-                $('#tips-info').text('验证短信已发送')
-            } else {
-                if (result.reason === 'captcha_required'){
-                    need_captcha_test = true;
-                    setTimeout(function() { request_phone_code(); }, 0)
-                    return
-                } else {
-                    $('#tips-error em').text('验证短信发送失败，请稍后再试');
-                }
-                $('#tips-info').text('');
-            }
-        }, 'json');
-    }
-});
-
-$("form .change-captcha-btn").on('click', function(){
-    var captcha_id_el = $('form input[name="captcha-id"]'),
-        captcha_img_el = $('form img.captcha-img'),
-        captcha_url = '/accounts/j/misc/reg_captcha';
-    $.getJSON(captcha_url, function(captcha) {
-        captcha_img_el.attr("src", captcha.url);
-        captcha_id_el.val(captcha.token);
-    });
-});
-
-function displayError(el, msg) {
-  var err = document.getElementById(el.name + '_err');
-  if (!err) {
-    err = document.createElement('span');
-    err.id = el.name + '_err';
-    err.className = 'error-tip';
-    el.parentNode.appendChild(err);
-  }
-  err.style.display = 'inline';
-  err.innerHTML = msg;
-}
-
-
-Do('validate','dialog',function(){
-    var email = $('#email'),
-        suggestion = $('#email_suggestion'),
-        email_value = '',
-        e_name = '',
-        e_domain = '',
-        e_tip_on = 0,
-        passwd_reg = /^[\u4e00-\u9fa5]/,
-
-        email_list = new Array('163.com','126.com', '139.com', '188.com', '2008.china.com', '2008.sina.com', '21cn.com', '263.net', 'china.com', 'chinaren.com', 'citiz.net', 'eyou.com', 'foxmail.com', 'gmail.com', 'hongkong.com', 'hotmail.com', 'live.cn', 'live.com', 'mail.china.com', 'msn.com', 'my3ia.sina.com', 'qq.com', 'sina.cn', 'sina.com', 'sina.com.cn', 'sogou.com', 'sohu.com', 'vip.163.com', 'vip.qq.com', 'vip.sina.com', 'vip.sohu.com', 'vip.tom.com', 'yahoo.cn', 'yahoo.com', 'yahoo.com.cn', 'yahoo.com.hk', 'yahoo.com.tw', 'yeah.net'),
-
-        TXT_CAPTCHA_NULL = '请输入验证码',
-        TXT_CAPTCHA_ERROR = '请输入正确的验证码',
-        error_info = $('#frm_error').text();
-
-        if ( error_info === TXT_CAPTCHA_NULL || error_info === TXT_CAPTCHA_ERROR ) {
-            $('#frm_error').show();
-        } else {
-            $('<div></div>').text(error_info).addClass('item-error').insertAfter('.captcha-item').show();
-            $('#frm_error').remove();
-        }
-
-    function DPA(s1, s2){
-        var m = new Array();
-        var i, j;
-        for(i=0; i < s1.length + 1; i++) m[i] = new Array(); // i.e. 2-D array
-
-        m[0][0] = 0; // boundary conditions
-
-        for(j=1; j <= s2.length; j++)
-            m[0][j] = m[0][j-1]-0 + 1; // boundary conditions
-
-        for(i=1; i <= s1.length; i++)                            // outer loop
-        {
-            m[i][0] = m[i-1][0]-0 + 1; // boundary conditions
-
-            for(j=1; j <= s2.length; j++)                         // inner loop
-            {
-                var diag = m[i-1][j-1];
-                if( s1.charAt(i-1) != s2.charAt(j-1) ) diag++;
-
-                m[i][j] = Math.min( diag,               // match or change
-                Math.min( m[i-1][j]-0 + 1,    // deletion
-                m[i][j-1]-0 + 1 ) ); // insertion
-            }//for j
-        }//for i
-       return m[s1.length][s2.length];
-    };
-
-    function get_like(s){
-        r = 0;
-        v = s.split('@');
-        if ( v.length <=1 ) return;
-        domain = v[1];
-        e_name = v[0];
-        dis = domain.length;
-        for (k=0; k < email_list.length; k++){
-            e = email_list[k];
-            d = DPA(domain, e);
-            if (d < dis){
-                dis = d;
-                e_domain = e;
-            }
-        }
-        if(dis && dis < 4){
-            r = 1;
-        }
-        return r;
-    };
-
-    function email_suggestion(like){
-        s = email.attr('value');
-        if (!( s && s.length > 2 )) {
-            return;
-        }
-        if (like && get_like(s)){
-            as = ' <a id="yes_but" href="#">是</a>／<a href="#" id="no_but">不是</a>';
-            suggestion.html( '<p><span>你是否要输入' + e_name + '@</span>' + e_domain + as + '</p>' );
-            $("#yes_but").focus();
-            e_tip_on = 1;
-        }
-
-        email_value = email.attr('value');
-        return r;
-    };
-
-    $('#email').focusout(function() {
-        var e = $(this).parents('.item').hasClass('has-error');
-        if ( !e ) {
-            email_suggestion(1);
-        }
-    });
-
-    $('body').delegate('#yes_but', 'click', function(e) {
-        e.preventDefault();
-        email.attr('value', e_name + '@' + e_domain);
-        email.focus();
-        suggestion.html( '' );
-        e_tip_on = 0;
-    });
-    $('body').delegate('#no_but', 'click', function(e) {
-        e.preventDefault();
-        suggestion.html( '' );
-        e_tip_on = 0;
-    });
-    $("input[name='agreement']").each(function(){
-        if ($("input[name='agreement']").is(':checked')) {
-            $("input[name='register']").attr('disabled', false).addClass('enabled');
-        } else {
-            $("input[name='register']").attr('disabled', true).removeClass('enabled');
-        }
-    });
-    $("input[name='agreement']").click(function(){
-        if ($("input[name='agreement']").is(':checked')) {
-            $("input[name='register']").attr('disabled', false).addClass('enabled');
-        } else {
-            $("input[name='register']").attr('disabled', true).removeClass('enabled');
-        }
-
-    });
-    var optionMsg = {
-        email: '用来登录豆瓣，接收到激活邮件才能完成注册',
-        password: '至少包含字母和数字，最短8个字符，区分大小写',
-        name: '中、英文均可，最长14个英文或7个汉字',
-        loc: ''
-    },
-    validateError = {
-        email: {
-            isNull: 'Email不能为空',
-            invalidFormat: 'Email格式不正确',
-            //unavailable: '',
-            unableForTom: '目前暂时不支持使用 tom.com 邮箱注册豆瓣帐号',
-            unableForChongseo: '目前暂时不支持使用 chongseo.cn 邮箱注册豆瓣帐号'
-        },
-        password: {
-            isNull: '密码不能为空',
-            isShort: '密码长度不足8个字符',
-            invalidFormat: '请使用英文字母、符号或数字',
-            invalidStrong: '密码强度不够，请包含字母和数字'
-        },
-        location: {
-            isNull: '常居地不能为空'
-        },
-        name: {
-            isNull: '名号不能为空',
-            isLong: '名号长度不能超过14个英文或7个汉字'
-        },
-        captcha: {
-            isNull: '验证码不能为空'
-        }
-    },
-    validateRules = {
-        email: {
-            elems: 'input[name=email]',
-            isNull: function(el) {
-                return !$.trim(el.val());
-            },
-            invalidFormat: function(el) {
-                  return !$.validate.isEmail($.trim(el.val()));
-            },
-            /*unavailable: function(el,o) {
-                var item = el.parents('.item');
-                o.asyncValidate(el,
-                '/accounts/j/register/is_registered?email=' + $.trim(el.val()),
-                function(j){
-                    if (j.ok){
-                        el.val(s);
-                        o.displayError(el, '该Email已经注册过');
-                        item.addClass('has-error');
-                    }
-                });
-            },*/
-            unableForTom: function(el,o) {
-                var domain = el.val().split('@')[1];
-                return domain == 'tom.com';
-            },
-            unableForChongseo: function(el,o) {
-                var domain = el.val().split('@')[1];
-                return domain == 'chongseo.cn';
-            }
-
-        },
-        password: {
-            elems: 'input[name=password]',
-            isNull: function(el) {
-                if ( el.val() === '' ) return true;
-            },
-            isShort: function(el) {
-                if ( el.val() !='' && el.val().length < 8 ) {
-                    return true;
-                }
-            },
-            invalidFormat: function(el) {
-                var s = $.trim(el.val());
-                return passwd_reg.test(s);
-            },
-            invalidStrong: function(el) {
-                var s = $.trim(el.val());
-                if (!(/\d/.test(s))){
-                    return true;
-                }
-                if (!(/[a-zA-Z\~\)\!\$\%\*\(\_\+\-\=\{\}\[\]\|\:\;\<\>\?\,\.\/\@\#\^\"\'\`\?\&]/.test(s)))
-                {
-                    return true;
-                }
-            }
-        },
-        name: {
-            elems: 'input[name=name]',
-            isNull: function(el) {
-                return !$.trim(el.val());
-            },
-            isLong: function(el) {
-                return $.trim(el.val()).replace(/[^\x00-\xff]/g, '豆瓣').length <= 14 ? false : true;
-            }
-        },
-        location: {
-            elems: 'input[name=loc]',
-            isNull: function(el) {
-                return !$.trim(el.val());
-            }
-        },
-        captcha: {
-            elems: 'input[name=captcha-solution]',
-            isNull: function(el) {
-                return !$.trim(el.val());
-            }
-
-        }
-    };
-    $('form').validateForm(validateRules, validateError, optionMsg, null);
-
-
-    String.prototype.strReverse=function(){var b="";for(var a=0;a<this.length;a++){b=this.charAt(a)+b}return b};function checkPassword(f){if(!f){return 0}var h=8;if(f.length<h){return 0}var g=0;var e="abcdefghijklmnopqrstuvwxyz";var d="01234567890";var a="~)!@#$%^&*()_+-={}[]|:;<>?,./";if(f.length>=10){g+=20}if(f.length>=12){g+=20}if(f.match(/[a-z]/g)){g+=20}if(f.match(/[0-9]/g)){g+=20}if(f.match(/[A-Z]/g)){g+=20}for(var i=0;i<a.length;i++){if(f.indexOf(a[i])!=-1){g+=20;break}}for(var i=0;i<23;i++){var b=e.substring(i,parseInt(i+3));var c=b.strReverse();if(f.indexOf(b)!=-1||f.indexOf(c)!=-1){g-=20}b=e.toUpperCase().substring(i,parseInt(i+3));c=b.strReverse();if(f.indexOf(b)!=-1||f.indexOf(c)!=-1){g-=20}}for(var i=0;i<8;i++){var b=d.substring(i,parseInt(i+3));var c=b.strReverse();if(f.indexOf(b)!=-1||f.toLowerCase().indexOf(c)!=-1){g-=20}}return Math.max(g,0)};
-
-    var delayKey,
-    displayPasswdMeter = function(n, item) {
-      var s,  node = item.find('.validate-meter');
-
-      if (n < 60) {
-        s = '弱';
-      } else if (n < 80) {
-        s = '一般';
-      } else {
-        s = '强';
-      }
-
-      item.find('.validate-option, .validate-error').hide();
-
-      if (node.length === 0) {
-        node = $('<span class="validate-meter"></span>').appendTo(item);
-      }
-
-      node.show().text('密码强度：' + s);
-    };
-
-    $('#password').bind({
-      focus: function() {
-        var el = $(this),
-        item = el.parent();
-
-        if (item.find('.validate-error').css('display') === 'inline') {
-          return;
-        }
-
-        if (el.val().length >= 8) {
-          item.find('.validate-option').hide();
-        }
-      },
-
-      blur: function() {
-        var el = $(this),
-        item = el.parent(),
-        error = item.find('.validate-error');
-
-        if (error.css('display') === 'inline') {
-          item.find('.validate-meter').hide();
-          return;
-        }
-      },
-
-      keyup: function(e) {
-        var el = this;
-        if (this.value.length < 8) {
-          return;
-        }
-        delayKey && clearTimeout(delayKey);
-        delayKey = setTimeout(function(){
-          displayPasswdMeter(checkPassword(el.value), $(el).parent());
-        }, 10);
-      }
-   });
-});
-</script>
-
 
 <style type="text/css">
 /* for pop dialog */
