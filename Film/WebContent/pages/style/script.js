@@ -1,4 +1,40 @@
-var app = angular.module('filmApp',['ngRoute','ngCookies']);
+angular.module('filmApp.services',[]).
+	factory('UserService',function($http) {
+	var current_user;
+	
+	return {
+		getCurrentUser:function() {
+			return current_user ;
+		},
+		setCurrentUser:function(user) {
+			current_user = user;
+		},
+		clearCurrentUser:function() {
+			current_user = null;
+		}
+	}
+}).factory('logoutService',function($cookieStore,$location) {
+	return {
+		logout:function() {
+			if($cookieStore.get('userid')!=null) {
+				$cookieStore.remove('userid');
+				$location.path('/login');
+				/*layer.confirm('确定退出吗？',{
+					btn:['确定','取消']
+				},function() {
+					$cookieStore.remove('userid');
+					layer.msg("跳转至登录界面");
+					$location.path('/login');
+				},function() {
+					console.log("退出失败");
+				});	*/
+			}else{
+				layer.alert("请先登录");
+			}
+		}
+	}
+});
+var app = angular.module('filmApp',['ngRoute','ngCookies','filmApp.services']);
 app.config(function($routeProvider) {
 	$routeProvider
 		.when('/',{
@@ -52,8 +88,9 @@ app.config(function($routeProvider) {
 			controller:'payController',
 			templateUrl:'pay.html',
 			allowAnonymous:false
-		})
+		});
 });
+
 
 app.run(function($location,$rootScope,$log,$route,$cookieStore) {
 	function onRouteChangeStart(event,next,current) {
@@ -70,7 +107,7 @@ app.run(function($location,$rootScope,$log,$route,$cookieStore) {
 	$rootScope.$on('$routeChangeStart',onRouteChangeStart);
 });
 
-app.controller('loginController',function($scope,$http,$routeParams,$location,$rootScope,$cookieStore) {
+app.controller('loginController',function($scope,$http,$routeParams,$location,$rootScope,$cookieStore,UserService) {
 	if($routeParams.returnUrl!=null) {
 		console.log($routeParams.returnUrl);
 	}
@@ -94,6 +131,7 @@ app.controller('loginController',function($scope,$http,$routeParams,$location,$r
 					$cookieStore.put('userid',user.id);
 					$rootScope.currentUser = user;
 					console.log($rootScope.currentUser);
+					UserService.setCurrentUser(user.id);
 					if($routeParams.returnUrl!=null) {
 						$location.path($routeParams.returnUrl);
 						console.log($routeParams.returnUrl);
@@ -156,7 +194,8 @@ app.controller('registerController',function($scope,$http,$location){
 		});
 	};
 });
-app.controller('filmSelectController',function($scope,$http,$rootScope,$cookieStore,$location){
+app.controller('filmSelectController',function($scope,$http,$rootScope,$cookieStore,$location,logoutService){
+	/*console.log("服务中的用户名是" + UserService.getCurrentUser());*/
 	if($cookieStore.get('userid')!=null) {
 		$scope.isLoginShow = false;
 		$scope.userid = $cookieStore.get('userid');
@@ -321,19 +360,24 @@ app.controller('filmSelectController',function($scope,$http,$rootScope,$cookieSt
 	
 	//退出登录
 	$scope.logout = function() {
-		layer.confirm('确定退出吗？',{
-			btn:['确定','取消']
-		},function() {
-			$cookieStore.remove('userid');
-			layer.msg("跳转至登录界面");
-			$location.path('/login');
-		},function() {
-			console.log("退出失败");
-		});	
+		/*if($cookieStore.get('userid')!=null) {
+			layer.confirm('确定退出吗？',{
+				btn:['确定','取消']
+			},function() {
+				$cookieStore.remove('userid');
+				layer.msg("跳转至登录界面");
+				$location.path('/login');
+			},function() {
+				console.log("退出失败");
+			});	
+		}else{
+			layer.alert("请先登录");
+		}*/
+		logoutService.logout();
 	};
 });
 
-app.controller('filmDetailDisplayController',function($http,$routeParams,$scope,$rootScope,$cookieStore) {
+app.controller('filmDetailDisplayController',function($http,$routeParams,$scope,$rootScope,$cookieStore,logoutService) {
 	if($cookieStore.get('userid')!=null) {
 		$scope.isLoginShow = false;
 		$scope.userid = $cookieStore.get('userid');
@@ -377,9 +421,12 @@ app.controller('filmDetailDisplayController',function($http,$routeParams,$scope,
 		}).error(function(){
 			
 		});
+	$scope.logout = function() {
+		logoutService.logout();
+	};
 });
 
-app.controller('commentController',function($http,$scope,$routeParams,$rootScope,$location,$cookieStore) {
+app.controller('commentController',function($http,$scope,$routeParams,$rootScope,$location,$cookieStore,logoutService) {
 	if($cookieStore.get('userid')!=null) {
 		$scope.isLoginShow = false;
 		$scope.userid = $cookieStore.get('userid');
@@ -402,12 +449,17 @@ app.controller('commentController',function($http,$scope,$routeParams,$rootScope
 			async:true,
 			processData:false,
 			cache:false,
-			params:{method:'addComment',filmid:id,comment:$scope.comment.comment,grade:$scope.comment.grade,userid:$rootScope.currentUser.id}
+			params:{method:'addComment',filmid:id,comment:$scope.comment.comment,grade:$scope.comment.grade,userid:$cookieStore.get('userid')}
 			}).success(function(data){
 				console.log(data.result);
-				if(data.result) {
-					layer.alert("评论成功",{icon:6});
-					$location.path('/filmDetail/'+id);
+				if(data.result.result) {	
+					if(data.result.isreward==1) {
+						layer.alert("恭喜您评论次数已满足，快去领奖吧");
+						$location.path('/reward');
+					}else {
+						layer.alert("评论成功",{icon:6});
+						$location.path('/filmDetail/'+id);
+					}
 				}else {
 					layer.alert("提交失败，请稍后重试",{icon:5});
 				}
@@ -415,9 +467,12 @@ app.controller('commentController',function($http,$scope,$routeParams,$rootScope
 			
 			});
 	};
+	$scope.logout = function() {
+		logoutService.logout();
+	};
 });
 
-app.controller('replyController',function($scope,$http,$location,$routeParams,$rootScope,$cookieStore){
+app.controller('replyController',function($scope,$http,$location,$routeParams,$rootScope,$cookieStore,logoutService){
 	if($cookieStore.get('userid')!=null) {
 		$scope.isLoginShow = false;
 		$scope.userid = $cookieStore.get('userid');
@@ -476,9 +531,13 @@ app.controller('replyController',function($scope,$http,$location,$routeParams,$r
 		}).error(function(){
 		
 		});
+	
+	$scope.logout = function() {
+		logoutService.logout();
+	};
 });
 
-app.controller('userInfoController',function($scope,$http,$rootScope,$cookieStore) {
+app.controller('userInfoController',function($scope,$http,$rootScope,$cookieStore,logoutService) {
 	if($cookieStore.get('userid')!=null) {
 		$scope.isLoginShow = false;
 		$scope.userid = $cookieStore.get('userid');
@@ -503,9 +562,13 @@ app.controller('userInfoController',function($scope,$http,$rootScope,$cookieStor
 		}).error(function(){
 		
 		});
+	
+	$scope.logout = function() {
+		logoutService.logout();
+	};
 });
 
-app.controller('userChangePswController',function($scope,$http,$rootScope,$location,$cookieStore) {
+app.controller('userChangePswController',function($scope,$http,$rootScope,$location,$cookieStore,logoutService) {
 	if($cookieStore.get('userid')!=null) {
 		$scope.isLoginShow = false;
 		$scope.userid = $cookieStore.get('userid');
@@ -549,8 +612,12 @@ app.controller('userChangePswController',function($scope,$http,$rootScope,$locat
 			
 			});
 	};
+	
+	$scope.logout = function() {
+		logoutService.logout();
+	};
 });
-app.controller('userChangePhoneController',function($http,$scope,$location,$rootScope,$cookieStore) {
+app.controller('userChangePhoneController',function($http,$scope,$location,$rootScope,$cookieStore,logoutService) {
 	if($cookieStore.get('userid')!=null) {
 		$scope.isLoginShow = false;
 		$scope.userid = $cookieStore.get('userid');
@@ -584,9 +651,13 @@ app.controller('userChangePhoneController',function($http,$scope,$location,$root
 			
 			});
 	};
+	
+	$scope.logout = function() {
+		logoutService.logout();
+	};
 });
 
-app.controller('payController',function($rootScope,$scope,$cookieStore) {
+app.controller('payController',function($rootScope,$scope,$cookieStore,logoutService) {
 	if($cookieStore.get('userid')!=null) {
 		$scope.isLoginShow = false;
 		$scope.userid = $cookieStore.get('userid');
@@ -597,6 +668,10 @@ app.controller('payController',function($rootScope,$scope,$cookieStore) {
 	}
 	$scope.user = {
 		id : $rootScope.currentUser.id,
+	};
+	
+	$scope.logout = function() {
+		logoutService.logout();
 	};
 });
 	
